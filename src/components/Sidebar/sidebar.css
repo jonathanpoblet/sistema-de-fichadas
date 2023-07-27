@@ -1,0 +1,22 @@
+.sidebar {
+    max-width: 200px;
+    width: 100%;
+    height: calc(100vh - 52px);
+    border-right: 1px solid #555;
+    margin-right: 30px;
+    background-color: rgb(34, 56, 73);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 1rem 2rem;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+}

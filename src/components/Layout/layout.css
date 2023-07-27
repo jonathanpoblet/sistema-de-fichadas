@@ -2,6 +2,7 @@
 .fade-in {
     opacity: 0;
     animation: fade-in 0.5s ease-in-out forwards;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
   
 @keyframes fade-in {
@@ -11,4 +12,9 @@
     to {
       opacity: 1;
     }
+}
+
+.sidebar-main {
+  display: flex;
+  flex-direction: row;
 }
