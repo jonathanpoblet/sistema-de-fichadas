@@ -7,16 +7,104 @@
     background-color: rgb(34, 56, 73);
 }
 
-.sidebar ul {
+.sidebar-ul {
     list-style: none;
-    padding: 1rem 2rem;
 }
 
-.sidebar ul li {
-    margin-bottom: 1rem;
+
+.sidebar-ul-li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-.sidebar ul li a {
+.sidebar-ul-li-secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(45, 73, 95);
+}
+
+.sidebar-ul-li:hover, .sidebar-ul-li-secondary:hover{ 
+    background-color: #051c2e;
+}
+
+.sidebar-ul-li-icon {
+    color: #b8c7ce;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.sidebar-ul-li-arrow {
+    color: #b8c7ce;
+    font-size: 15px;
+    margin-left: 15px;
+    animation: fade-in 0.4s;
+}
+
+.sidebar-ul-li-link {
     text-decoration: none;
-    color: #fff;
+    color: #b8c7ce;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+
+.sidebar-ul-li-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 15px
+}
+
+.sidebar-ul-li-dropdown-secondary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 15px;
+    background-color: rgb(45, 73, 95);
+}
+
+.sidebar-ul-li-dropdown-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sidebar-ul-li-dropdown-li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #b8c7ce;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.sidebar-ul-li-dropdown:hover{ 
+    background-color: #051c2e;
+}
+
+.sidebar-ul-li-dropdown-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    width: 100%;
 }
