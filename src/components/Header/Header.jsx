@@ -1,9 +1,9 @@
 import { AiOutlineMenu } from 'react-icons/ai';
-import { BiSolidDownArrow } from 'react-icons/bi';
 
-import './header.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setResponsive } from '../../app/state/navigationSlice';
+
+import './header.css';
 
 export default function Header() {
 
@@ -22,9 +22,8 @@ export default function Header() {
             className='header-container-left-icon'
           />
         </div>
-        <div className='header-container-right'>
+        <div className='header-container-right' onClick={() => window.location.href = `http://localhost:5173/perfil`}>
           <p className='header-container-right-name'>Jonathan Alexander Poblet</p>
-          <BiSolidDownArrow className='header-container-right-icon' />
         </div>
       </div>
     </header>

@@ -18,7 +18,7 @@ export default function SidebarLiDropdown({ children, icon:Icon,label,second }) 
 
   return (
     <>
-      <div className={second ? 'sidebar-ul-li-dropdown-secondary' : 'sidebar-ul-li-dropdown'}  onClick={ handleDropdownToggle }>
+      <div title={window.innerWidth < 500 && label}  className={second ? 'sidebar-ul-li-dropdown-secondary' : 'sidebar-ul-li-dropdown'}  onClick={ handleDropdownToggle }>
         <ul className='sidebar-ul-li-dropdown-left'>
           { Icon && <Icon className='sidebar-ul-li-icon' /> }
           <li className={second ? 'sidebar-ul-li-link-secondary' : 'sidebar-ul-li-link'}>
