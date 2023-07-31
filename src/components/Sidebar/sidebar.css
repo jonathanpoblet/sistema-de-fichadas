@@ -38,7 +38,6 @@
 .sidebar-ul-li-icon {
     color: #b8c7ce;
     font-size: 15px;
-    margin-left: 15px;
 }
 
 .sidebar-ul-li-arrow {
@@ -48,13 +47,12 @@
     animation: fade-in 0.4s;
 }
 
-.sidebar-ul-li-link {
+.sidebar-ul-li-link, .sidebar-ul-li-link-secondary {
     text-decoration: none;
     color: #b8c7ce;
     font-size: 15px;
     margin-left: 5px;
 }
-
 
 .sidebar-ul-li-dropdown {
     display: flex;
@@ -107,4 +105,14 @@
     transition: 0.5s;
     cursor: pointer;
     width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .sidebar-ul-li-link, .sidebar-ul-li-dropdown-li, .sidebar-ul-li-dropdown-li-secondary {
+        display: none;
+    }
 }

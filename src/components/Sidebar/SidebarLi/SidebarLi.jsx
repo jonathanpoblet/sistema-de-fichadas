@@ -8,7 +8,7 @@ export default function SidebarLi({ icon: Icon, path, label, second }) {
       onClick={() => window.location.href = `http://localhost:5173${path}`}  
     >
       {Icon && <Icon className='sidebar-ul-li-icon' />}
-      <Link className='sidebar-ul-li-link' to={path}>
+      <Link className={second ? 'sidebar-ul-li-link-secondary' : 'sidebar-ul-li-link'} id='sidebar-ul-li-link' to={path}>
         {label}
       </Link>
     </li>
