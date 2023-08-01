@@ -1,0 +1,33 @@
+table {
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+tbody {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+th {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 2px 4px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+    max-width: 300px;
+}
+
+tr {
+    background-color: rgb(250, 250, 250);
+}
+
+tfoot {
+    color: gray;
+}
+
+tfoot th {
+    font-weight: normal;
+}
