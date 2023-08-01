@@ -1,31 +1,62 @@
-import { AiOutlineMenu } from 'react-icons/ai';
-
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setResponsive } from '../../app/state/navigationSlice';
+import ProfileModal from '../ProfileModal/ProfileModal';
 
+import { AiOutlineMenu } from 'react-icons/ai';
+import { BiSolidDownArrow, BiSolidLeftArrow } from 'react-icons/bi';
 import './header.css';
+import { setVisibleModalProfile } from '../../app/state/globalSlice';
 
 export default function Header() {
 
-  const responsive = useSelector(state => state.navigation.responsive)
-  const dispatch = useDispatch();
+  const visibleModalProfile = useSelector(state => state.global.visibleModalProfile)
 
+  const responsive = useSelector(state => state.navigation.responsive);
+  const user = useSelector(state => state.auth.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
-    <header className='header'>
-      <div className='header-left'>
-        <img className='header-left-img' src='http://www.grupotaraborelli.com/img/logo-i.png' alt='Grupo Taraborelli'/>
-      </div>
-      <div className='header-container'>
-        <div className='header-container-left' onClick={async() => dispatch(setResponsive(!responsive))}>
-          <AiOutlineMenu 
-            className='header-container-left-icon'
+    <>
+      <header className='header'>
+        <div className='header-left'>
+          <img 
+            className='header-left-img' 
+            src='http://www.grupotaraborelli.com/img/logo-i.png' 
+            alt='Grupo Taraborelli'
+            onClick={() => {
+              dispatch(setVisibleModalProfile(false))
+              navigate('../')
+            }}
           />
         </div>
-        <div className='header-container-right' onClick={() => window.location.href = `http://localhost:5173/perfil`}>
-          <p className='header-container-right-name'>Jonathan Alexander Poblet</p>
+        <div className='header-container'>
+          <div style={window.innerHeight < 500 ? {display: 'none'} : {display: 'flex'}} className='header-container-left' onClick={async() => dispatch(setResponsive(!responsive))}>
+            <AiOutlineMenu 
+              className='header-container-left-icon'
+            />
+          </div>
+          <div className='header-container-right' onClick={() => dispatch(setVisibleModalProfile(!visibleModalProfile))}>
+            <p className='header-container-right-name'>{ user.name } { user.lastname }</p>
+            {
+              !visibleModalProfile ? 
+              <BiSolidDownArrow className='header-container-right-icon'/> 
+              :
+              <BiSolidLeftArrow className='header-container-right-icon'/>
+            }
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {
+        visibleModalProfile && 
+        <ProfileModal
+          name={ user.name }
+          position={ user.position }
+          file={ user.file }
+        />
+      }
+    </>
   )
 }

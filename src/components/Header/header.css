@@ -77,6 +77,10 @@
     background-color: #051c2e;
 }
 
+.header-container-right-icon {
+    font-size: 12px;
+}
+
 @media screen and (max-width: 500px) {
     .header-left {
         display: none;

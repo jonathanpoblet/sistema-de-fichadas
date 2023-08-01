@@ -1,11 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { setVisibleModalProfile } from '../../../app/state/globalSlice';
 
 export default function SidebarLi({ icon: Icon, path, label, second }) {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   return (
     <li 
       className={second ? 'sidebar-ul-li-secondary' : 'sidebar-ul-li'}
-      onClick={() => window.location.href = `http://localhost:5173${path}`}
+      onClick={() =>  {
+        dispatch(setVisibleModalProfile(false));
+        navigate(path);
+      }}
       title={window.innerWidth < 500 ? label : undefined} 
     >
       {Icon && <Icon className='sidebar-ul-li-icon' />}

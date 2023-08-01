@@ -10,28 +10,23 @@ export const navigationSlice = createSlice({
         state.responsive = action.payload;
         
         const links = document.getElementsByClassName('sidebar-ul-li-link');
+        const dropdownLinks = document.getElementsByClassName('sidebar-ul-li-dropdown-li');
+        const sidebar = document.getElementsByClassName('sidebar');
+        const dropdownLiSecond = document.getElementsByClassName('sidebar-ul-li-secondary');
+        
         for (let i = 0; i < links.length; i++) {
           if(state.responsive == false) links[i].style.display = 'flex';
           else links[i].style.display = 'none';
         }
 
-        const dropdownLinks = document.getElementsByClassName('sidebar-ul-li-dropdown-li');
         for (let i = 0; i < dropdownLinks.length; i++) {
           if(state.responsive == false) dropdownLinks[i].style.display = 'flex';
           else dropdownLinks[i].style.display = 'none';
         }
 
-        const sidebar = document.getElementsByClassName('sidebar');
-        if(state.responsive == false) sidebar[0].style.width = '200px';
+        if(state.responsive == false) sidebar[0].style.width = '100%';
         else sidebar[0].style.width = '50px';
 
-        if (window.innerWidth > 500) {
-          const img = document.getElementsByClassName('header-left');
-          if(state.responsive == false) img[0].style.display = 'flex';
-          else img[0].style.display = 'none';
-        }
-
-        const dropdownLiSecond = document.getElementsByClassName('sidebar-ul-li-secondary');
         for (let i = 0; i < dropdownLiSecond.length; i++) {
           if(state.responsive == false) dropdownLiSecond[i].style.display = 'flex';
           else dropdownLiSecond[i].style.display = 'none';

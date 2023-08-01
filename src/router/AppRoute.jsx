@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import Layout from "../components/Layout/Layout";
 
@@ -17,7 +17,7 @@ export default function AppRoute() {
 
   return (
     <Suspense fallback={<Spinner />}>
-      <BrowserRouter>
+      <Router>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ export default function AppRoute() {
             <Route path="/login" element={<LogIn />} />
           </Routes>
         </Layout>
-      </BrowserRouter>
+      </Router>
     </Suspense>
   );
 }
