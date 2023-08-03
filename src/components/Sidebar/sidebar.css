@@ -1,7 +1,6 @@
 .sidebar {
     max-width: 200px;
     width: 100%;
-    height: calc(100vh - 52px);
     border-right: 1px solid #555;
     margin-right: 30px;
     background-color: rgb(34, 56, 73);

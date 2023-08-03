@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './table.css';
 
 export default function Table({ columns, data }) {
 
+  const [totalItems, setTotalItems] = useState(data.length);
+  const [page,setPage] = useState(0);
   const [rows, setRows] = useState(10);
+  const [totalPages, setTotalPages] = useState(Math.ceil(totalItems / rows));
   const [query, setQuery] = useState('');
   const [tempData,setTempData] = useState(data.slice(0, rows));
 
-  const search = (quantity,query) => {
+  const search = (page,quantity,query) => {
     setRows(quantity);
     setQuery(query);
-
-    if(!query) return setTempData(data.slice(0, quantity));
 
     const queryLowerCase = query.toLowerCase();
     const res = data.filter(item => {
@@ -24,9 +25,32 @@ export default function Table({ columns, data }) {
       }
       return false;
     });
-
-    setTempData(res.slice(0, quantity));
+    setTotalItems(res.length)
+    setTotalPages(Math.ceil(res.length / quantity))
+    if(!query)  return setTempData(data.slice(page, quantity));
+    setTempData(res.slice(page, quantity));
   }
+
+  const handleNextPage = () => {
+    if (page < totalPages - 1) {
+      setPage(page + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+  };
+
+  useEffect(() => {
+    if(page != 0) {
+      console.log(page + rows)
+      console.log(rows + rows)
+      search(page, rows, query);
+    }
+  }, [page, rows, query]);
+
 
   return (
     <div className='table'>
@@ -35,7 +59,7 @@ export default function Table({ columns, data }) {
           <p>
             Mostrar
           </p>
-          <select onChange={(e) => {search(e.target.value,query)}}>
+          <select onChange={ (e) => {search(page,e.target.value,query)} }>
             <option value='10'>10</option>
             <option value='25'>25</option>
             <option value='50'>50</option>
@@ -43,7 +67,7 @@ export default function Table({ columns, data }) {
           </select>
         </div>
         <div className='table-header-search'>
-          <input placeholder='Buscar' onChange={(e) => search(rows,e.target.value)} />
+          <input placeholder='Buscar' onChange={ (e) => search(page,rows,e.target.value) } />
         </div>
       </div>
 
@@ -51,7 +75,7 @@ export default function Table({ columns, data }) {
         <thead>
           <tr>
             {columns.map((column) => (
-              <th key={column.key}>{column.name}</th>
+              <th key={ column.key }>{ column.name }</th>
             ))}
           </tr>
         </thead>
@@ -59,7 +83,7 @@ export default function Table({ columns, data }) {
           {tempData.map((row, index) => (
             <tr key={index}>
               {columns.map((column) => (
-                <td key={column.key}>{row[column.key]}</td>
+                <td key={ column.key }>{ row[column.key] }</td>
               ))}
             </tr>
           ))}
@@ -67,10 +91,10 @@ export default function Table({ columns, data }) {
       </table>
 
       <div className='table-footer'>
-        <p>Pagina 1 de 2 (de {data.length} resultados)</p>
+        <p>Pagina {page + 1} de { totalPages } (de { totalItems } resultados)</p>
         <div>
-          <button>Anterior</button>
-          <button>Siguiente</button>
+          <button onClick={handlePreviousPage}>Anterior</button>
+          <button onClick={handleNextPage}>Siguiente</button>
         </div>
       </div>
     </div>

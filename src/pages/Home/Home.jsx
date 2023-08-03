@@ -132,6 +132,126 @@ export default function Home() {
       company: 'Soprano Ice Platinum',
       profession: 'Cosmetologa'
     },
+    {
+      id: 16,
+      name: 'Jonathan',
+      lastname: 'Poblet',
+      age: 21,
+      company: 'Grupo Taraborelli',
+      profession: 'Desarrollador Web'
+    },
+    {
+      id: 17,
+      name: 'Dante',
+      lastname: 'Poblet',
+      age: 12,
+      company: '-',
+      profession: 'Estudiante'
+    },
+    {
+      id: 18,
+      name: 'Andrea',
+      lastname: 'Carrizo',
+      age: 45,
+      company: 'Soprano Ice Platinum',
+      profession: 'Cosmetologa'
+    },
+    {
+      id: 19,
+      name: 'Jonathan',
+      lastname: 'Poblet',
+      age: 21,
+      company: 'Grupo Taraborelli',
+      profession: 'Desarrollador Web'
+    },
+    {
+      id: 20,
+      name: 'Dante',
+      lastname: 'Poblet',
+      age: 12,
+      company: '-',
+      profession: 'Estudiante'
+    },
+    {
+      id: 21,
+      name: 'Andrea',
+      lastname: 'Carrizo',
+      age: 45,
+      company: 'Soprano Ice Platinum',
+      profession: 'Cosmetologa'
+    },
+    {
+      id: 22,
+      name: 'Jonathan',
+      lastname: 'Poblet',
+      age: 21,
+      company: 'Grupo Taraborelli',
+      profession: 'Desarrollador Web'
+    },
+    {
+      id: 23,
+      name: 'Dante',
+      lastname: 'Poblet',
+      age: 12,
+      company: '-',
+      profession: 'Estudiante'
+    },
+    {
+      id: 24,
+      name: 'Andrea',
+      lastname: 'Carrizo',
+      age: 45,
+      company: 'Soprano Ice Platinum',
+      profession: 'Cosmetologa'
+    },
+    {
+      id: 25,
+      name: 'Jonathan',
+      lastname: 'Poblet',
+      age: 21,
+      company: 'Grupo Taraborelli',
+      profession: 'Desarrollador Web'
+    },
+    {
+      id: 26,
+      name: 'Dante',
+      lastname: 'Poblet',
+      age: 12,
+      company: '-',
+      profession: 'Estudiante'
+    },
+    {
+      id: 27,
+      name: 'Andrea',
+      lastname: 'Carrizo',
+      age: 45,
+      company: 'Soprano Ice Platinum',
+      profession: 'Cosmetologa'
+    },
+    {
+      id: 28,
+      name: 'Jonathan',
+      lastname: 'Poblet',
+      age: 21,
+      company: 'Grupo Taraborelli',
+      profession: 'Desarrollador Web'
+    },
+    {
+      id: 29,
+      name: 'Dante',
+      lastname: 'Poblet',
+      age: 12,
+      company: '-',
+      profession: 'Estudiante'
+    },
+    {
+      id: 30,
+      name: 'Andrea',
+      lastname: 'Carrizo',
+      age: 45,
+      company: 'Soprano Ice Platinum',
+      profession: 'Cosmetologa'
+    },
   ];
 
   return (
