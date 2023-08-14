@@ -64,6 +64,11 @@
 }
 
 @media screen and (max-width: 800px) {
+    .add-client {
+        height: 100%;
+        margin-bottom: 30px;
+    }
+
     .add-client-section-form-container {
         width: 100%;
     }
