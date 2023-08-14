@@ -5,8 +5,8 @@ import ProfileModal from '../ProfileModal/ProfileModal';
 
 import { AiOutlineMenu } from 'react-icons/ai';
 import { BiSolidDownArrow, BiSolidLeftArrow } from 'react-icons/bi';
-import './header.css';
 import { setVisibleModalProfile } from '../../app/state/globalSlice';
+import './header.css';
 
 export default function Header() {
 

@@ -2,7 +2,8 @@
     padding: 10px;
     background-color: #fff;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: auto;
+    max-height: 615px; /* Ajusta la altura máxima según tus necesidades */
 }
 
 table {
@@ -15,6 +16,7 @@ table {
 tbody {
     border-bottom: 1px solid lightgray;
     width: 100%;
+    overflow-y: hidden;
 }
 
 th {

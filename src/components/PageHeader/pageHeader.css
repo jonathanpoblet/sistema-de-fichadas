@@ -1,0 +1,12 @@
+.page-header {
+    padding: 10px;
+    background-color: #fff;
+    overflow-x: auto;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.page-header-title {
+    font-size: 25px;
+    font-weight: 500;
+}
