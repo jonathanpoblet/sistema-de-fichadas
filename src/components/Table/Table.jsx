@@ -4,17 +4,14 @@ import './table.css';
 export default function Table({ columns, data }) {
 
   const [totalItems, setTotalItems] = useState(data.length);
-  const [page,setPage] = useState(0);
+  const [page, setPage] = useState(0);
   const [rows, setRows] = useState(10);
   const [totalPages, setTotalPages] = useState(Math.ceil(totalItems / rows));
   const [query, setQuery] = useState('');
-  const [tempData,setTempData] = useState(data.slice(0, rows));
+  const [tempData, setTempData] = useState(data.slice(0, rows));
 
-  const search = (page,quantity,query) => {
-    setRows(quantity);
-    setQuery(query);
-
-    const queryLowerCase = query.toLowerCase();
+  const search = (newPage, newRows, newQuery) => {
+    const queryLowerCase = newQuery.toLowerCase();
     const res = data.filter(item => {
       for (const column of columns) {
         const key = column.key;
@@ -25,10 +22,19 @@ export default function Table({ columns, data }) {
       }
       return false;
     });
-    setTotalItems(res.length)
-    setTotalPages(Math.ceil(res.length / quantity))
-    if(!query)  return setTempData(data.slice(page, quantity));
-    setTempData(res.slice(page, quantity));
+
+    setRows(newRows);
+    setQuery(newQuery);
+    setTotalItems(res.length);
+    setTotalPages(Math.ceil(res.length / newRows));
+
+    // Asegurarse de que la página no exceda el número total de páginas
+    const newPageClamped = Math.min(newPage, totalPages - 1);
+    setPage(newPageClamped);
+
+    const startIndex = newPageClamped * newRows;
+    const endIndex = startIndex + newRows;
+    setTempData(res.slice(startIndex, endIndex));
   }
 
   const handleNextPage = () => {
@@ -44,13 +50,8 @@ export default function Table({ columns, data }) {
   };
 
   useEffect(() => {
-    if(page != 0) {
-      console.log(page + rows)
-      console.log(rows + rows)
-      search(page, rows, query);
-    }
+    search(page, rows, query);
   }, [page, rows, query]);
-
 
   return (
     <div className='table'>
@@ -59,7 +60,7 @@ export default function Table({ columns, data }) {
           <p>
             Mostrar
           </p>
-          <select onChange={ (e) => {search(page,e.target.value,query)} }>
+          <select onChange={(e) => { search(0, e.target.value, query) }}>
             <option value='10'>10</option>
             <option value='25'>25</option>
             <option value='50'>50</option>
@@ -67,7 +68,7 @@ export default function Table({ columns, data }) {
           </select>
         </div>
         <div className='table-header-search'>
-          <input placeholder='Buscar' onChange={ (e) => search(page,rows,e.target.value) } />
+          <input placeholder='Buscar' onChange={(e) => search(0, rows, e.target.value)} />
         </div>
       </div>
 
@@ -75,7 +76,7 @@ export default function Table({ columns, data }) {
         <thead>
           <tr>
             {columns.map((column) => (
-              <th key={ column.key }>{ column.name }</th>
+              <th key={column.key}>{column.name}</th>
             ))}
           </tr>
         </thead>
@@ -83,7 +84,7 @@ export default function Table({ columns, data }) {
           {tempData.map((row, index) => (
             <tr key={index}>
               {columns.map((column) => (
-                <td key={ column.key }>{ row[column.key] }</td>
+                <td key={column.key}>{row[column.key]}</td>
               ))}
             </tr>
           ))}
@@ -91,7 +92,7 @@ export default function Table({ columns, data }) {
       </table>
 
       <div className='table-footer'>
-        <p>Pagina {page + 1} de { totalPages } (de { totalItems } resultados)</p>
+        <p>Pagina {page + 1} de {totalPages} (de {totalItems} resultados)</p>
         <div>
           <button onClick={handlePreviousPage}>Anterior</button>
           <button onClick={handleNextPage}>Siguiente</button>
