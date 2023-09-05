@@ -1,23 +1,31 @@
 import React from 'react';
-
-import SidebarLi from './SidebarLi/SidebarLi';
-
-import { AiFillHome } from 'react-icons/ai';
-import { BiSolidUser, BiSolidUserPlus } from 'react-icons/bi';
-import { FaUserFriends } from 'react-icons/fa';
+import Dropdown from './Dropdown/Dropdown';
 
 import './sidebar.css';
 
 export default function Sidebar() {
+
+  const HomeSubMenus = [{title: 'Home1', url: '#1'},{title: 'Home2', url: '#2'},{title: 'Home3', url: '#3'}];
+  const ProfileSubMenus = [{title: 'Profile1', url: '#1'},{title: 'Profile2', url: '#2'},{title: 'Profile3', url: '#3'}];
+
   return (
-    <div className='sidebar'>
-      <ul className='sidebar-ul'>
-        <SidebarLi icon={AiFillHome} path='/' label='Inicio'/>
-        <SidebarLi icon={BiSolidUser} path='/perfil' label='Perfil' />
-        <SidebarLi icon={AiFillHome} path='/test-no-Route' label='Test-no-Route' /> 
-        <SidebarLi icon={BiSolidUserPlus} path='/añadir-cliente' label='Añadir Cliente' /> 
-        <SidebarLi icon={FaUserFriends} path='/listado-clientes' label='Listado Clientes' /> 
-      </ul>
-    </div>
+  <div className="flex-shrink-0 sidebar">
+    <ul className="list-unstyled ps-0">
+
+      {/* Home */}
+      <>
+        <label className='w-100 text-light fs-6 py-1 px-2 sidebar-label'><small>Home</small></label>
+        <Dropdown title={'Home'} collapse={'home-collapse'} submenus={HomeSubMenus} />
+      </>
+
+      {/* Profile */}
+      <>
+        <label className='w-100 text-light fs-6 py-1 px-2 sidebar-label'><small>Profile</small></label>
+        <Dropdown title={'Profile'} collapse={'profile-collapse'} submenus={ProfileSubMenus} />
+      </>
+
+
+    </ul>
+  </div>
   )
 }
