@@ -7,9 +7,7 @@ import AppRoute from './router/AppRoute';
 
 function App() {
   return (
-    <>
-      <AppRoute />
-    </>
+    <AppRoute />
   )
 }
 
