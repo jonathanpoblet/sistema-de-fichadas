@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from './Dropdown/Dropdown';
+import Li from './Li/Li';
 
 import './sidebar.css';
 
@@ -15,13 +16,14 @@ export default function Sidebar() {
       {/* Home */}
       <>
         <label className='w-100 text-light fs-6 py-1 px-2 sidebar-label'><small>Home</small></label>
-        <Dropdown title={'Home'} collapse={'home-collapse'} submenus={HomeSubMenus} />
+        <Li title={ 'Home' } url={ '../' } />
+        <Dropdown title={ 'Home' } collapse={ 'home-collapse' } submenus={ HomeSubMenus } />
       </>
 
       {/* Profile */}
       <>
         <label className='w-100 text-light fs-6 py-1 px-2 sidebar-label'><small>Profile</small></label>
-        <Dropdown title={'Profile'} collapse={'profile-collapse'} submenus={ProfileSubMenus} />
+        <Dropdown title={ 'Profile' } collapse={ 'profile-collapse' } submenus={ ProfileSubMenus } />
       </>
 
 
