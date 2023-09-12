@@ -8,6 +8,7 @@ const Profile = lazy(() => import("../pages/Profile/Profile"));
 const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 
 export default function AppRoute() {
+  
 
   const token = useSelector(state => state.auth.token);
 
