@@ -8,7 +8,7 @@ export const authSlice = createSlice({
       name: 'Jonathan Alexander',
       lastname: 'Poblet',
       file: '226',
-      position: 'Desarrollador Web'
+      position: 'Web Developer'
     }
   },
   reducers: {

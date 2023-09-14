@@ -1,0 +1,21 @@
+.item-content {
+    font-size: 14px !important;
+}
+
+.sidebar {
+    margin: 0px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.pro-menu{
+    padding: 0 !important;
+    margin: 0;
+}
+
+nav ul {
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0;
+}

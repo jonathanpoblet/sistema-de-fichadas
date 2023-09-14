@@ -1,26 +1,16 @@
-import { useEffect } from 'react';
-import { HeaderLogo } from './HeaderLogo';
-import { HeaderResponsiveButton } from './HeaderResponsiveButton';
-import { HeaderMenu }  from './HeaderMenu';
+import { Link } from 'react-router-dom';
 
 import './header.css';
-import { useLocation } from 'react-router-dom';
 
 export default function Header() {
-
-  useEffect(() => {
-    document.getElementsByClassName('navbar-collapse')[0].classList.remove('show');
-    document.getElementsByClassName('nav-menu-button')[0].classList.remove('show');
-  }, [useLocation()])
-  
-
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light'>
         <div className='container-fluid'>
-          <HeaderLogo />
-          <HeaderResponsiveButton />
-          <HeaderMenu />
+        <Link to='../'>
+          <img className='nav-logo' src='http://www.grupotaraborelli.com/img/logo-i.png' alt='logo' />
+            {/* <img className='nav-logo' src='../../../public/assets/logo.png' alt='logo' /> */}
+        </Link>
         </div>
       </nav>
     </header>

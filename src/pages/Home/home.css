@@ -1,11 +1,10 @@
 .home {
     width: 100%;
-    border-radius: 5px;
     overflow-x: auto;
-    background-color: #dfdfdf;
     margin: 0px 10px 10px 10px;
 }
 
 .home-banner {
     width: 100%;
 }
+
