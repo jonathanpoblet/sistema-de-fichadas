@@ -8,11 +8,11 @@ export function HeaderMenu() {
     return (
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-                <HeaderLi url='/' title='Inicio'>
+                <HeaderLi url='/' title='Home'>
                     <AiFillHome className='text-light nav-li-icon' />
                 </HeaderLi>
 
-                <HeaderLi url='/perfil' title='Perfil'>
+                <HeaderLi url='/profile' title='Profile'>
                     <BsFillPersonFill className='text-light nav-li-icon' />
                 </HeaderLi>
 

@@ -9,7 +9,6 @@ const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 
 export default function AppRoute() {
   
-
   const token = useSelector(state => state.auth.token);
 
   console.log(token)
@@ -20,7 +19,7 @@ export default function AppRoute() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/perfil" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Layout>
       </Router>

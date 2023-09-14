@@ -3,7 +3,15 @@ import './home.css';
 export default function Home() {
   return (
     <main className='home'>
-      Home
+      <section>
+        <article>
+
+        </article>
+
+        <article>
+          
+        </article>
+      </section>
     </main>
   )
 }
