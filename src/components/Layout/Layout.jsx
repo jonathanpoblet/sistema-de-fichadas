@@ -9,10 +9,10 @@ export default function Layout({ children }) {
   return (
     <div className='fade-in'>
       <Header />
-      <Sidebar />
-      {/* <div className='sidebar-main'>
+      <div className='sidebar-main'>
+        <Sidebar />
         { children }
-      </div> */}
+      </div>
     </div>
   );
 }

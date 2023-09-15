@@ -8,9 +8,9 @@ import {
   } from 'cdbreact';
 
 import './sidebar.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
   
-  const Sidebar = () => {
+const Sidebar = () => {
     return (
             <CDBSidebar textColor="#fff" backgroundColor="#051c2e" minWidth='70px' className='sidebar'>
                 <CDBSidebarHeader prefix={<CDBIcon icon="bars" size="sm" />}>
@@ -22,6 +22,7 @@ import { Link, useNavigate } from 'react-router-dom';
                         <Link to='/' style={{width: '100'}}>
                             <CDBSidebarMenuItem
                             icon="th-large"
+                            tag="input"
                             >
                                 Home
                             </CDBSidebarMenuItem>
@@ -33,9 +34,138 @@ import { Link, useNavigate } from 'react-router-dom';
                                 Profile
                             </CDBSidebarMenuItem>
                         </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
+                        <Link to='/' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="th-large"
+                            tag="input"
+                            >
+                                Home
+                            </CDBSidebarMenuItem>
+                        </Link>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
             </CDBSidebar>
     );
-  };
-  export default Sidebar;
+};
+
+export default Sidebar;

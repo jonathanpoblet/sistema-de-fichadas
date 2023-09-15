@@ -4,15 +4,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #051c2e;
-    margin: 10px;
     padding: 12px !important;
-    border-radius: 5px;
 }
 
 .nav-logo {
     width: 160px;
     cursor: pointer;
-    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .nav-menu-button {
@@ -46,9 +44,26 @@ nav {
     padding: 5px;
 }
 
+.nav-user {
+    width: 50px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 10px 1px #525252;
+    cursor: pointer;
+}
+
 .nav-dropdown-list-item:hover {
     background-color: #125f9b;
     border-radius: 5px;
+}
+
+.swal2-theme-dark {
+    background-color: #051c2e;
+    color: white;
+  }
+  
+.swal2-popup .swal2-confirm, .swal2-popup .swal2-deny {
+    background-color: #ffffff;
+    color: #333;
 }
 
 @media screen and (max-width: 991px) {

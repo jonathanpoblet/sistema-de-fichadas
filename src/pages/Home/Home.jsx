@@ -3,7 +3,7 @@ import './home.css';
 
 export default function Home({ user }) {
   return (
-    <main className='home'>
+    <main className='home fade-in'>
       <HomeHeader user={ user } day />
     </main>
   )
