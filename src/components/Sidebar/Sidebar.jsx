@@ -24,14 +24,14 @@ const Sidebar = () => {
                             icon="th-large"
                             tag="input"
                             >
-                                Home
+                                Inicio
                             </CDBSidebarMenuItem>
                         </Link>
-                        <Link to='/profile' style={{width: '100'}}>
+                        <Link to='/perfil' style={{width: '100'}}>
                             <CDBSidebarMenuItem
-                            icon="sticky-note"
+                            icon="user"
                             >
-                                Profile
+                                Perfil
                             </CDBSidebarMenuItem>
                         </Link>
                         <Link to='/' style={{width: '100'}}>

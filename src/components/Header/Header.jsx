@@ -17,41 +17,20 @@ export default function Header() {
             <img className='nav-logo' src='http://www.grupotaraborelli.com/img/logo-i.png' alt='logo' />
               {/* <img className='nav-logo' src='../../../public/assets/logo.png' alt='logo' /> */}
           </Link>
+          <div class="btn-group dropstart">
           <img 
+            type="button"
             className='nav-user' 
             src={ img } 
             alt='user'
-            onClick={() => {
-              Swal.fire({
-                title: 'Profile or Logout?',
-                showDenyButton: true,
-                showCancelButton: false,
-                confirmButtonText: 'Profile',
-                denyButtonText: `Logout`,
-                customClass: {
-                  popup: 'swal2-theme-dark',
-                  confirmButton: 'swal2-confirm',
-                  denyButton: 'swal2-deny'
-                }
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  navigate('/profile');
-                } else if (result.isDenied) {
-                  Swal.fire({
-                    customClass: {
-                      popup: 'swal2-theme-dark',
-                      confirmButton: 'swal2-confirm',
-                      denyButton: 'swal2-deny'
-                    },
-                    title: 'Logout successfully'
-                  });
-                  setTimeout(() => {
-                    location.reload();
-                  }, 1500);
-                }
-              });
-            }} 
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           />
+          <ul className="dropdown-menu dropdown-menu-dark">
+            <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
+            <li style={{cursor: 'pointer'}} onClick={() => navigate('../') }><a className="dropdown-item" >Logout</a></li>
+          </ul>
+        </div>
         </div>
       </nav>
     </header>

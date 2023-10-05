@@ -12,15 +12,13 @@ export default function AppRoute() {
   const user = useSelector(state => state.auth.user)
   const token = useSelector(state => state.auth.token);
 
-  console.log(token)
-
   return (
     <Suspense fallback={<Spinner />}>
       <Router>
         <Layout>
           <Routes>
             <Route path="/" element={<Home user={ user } />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/perfil" element={<Profile />} />
           </Routes>
         </Layout>
       </Router>
