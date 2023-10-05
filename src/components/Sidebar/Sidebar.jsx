@@ -21,8 +21,7 @@ const Sidebar = () => {
                     <CDBSidebarMenu>
                         <Link to='/' style={{width: '100'}}>
                             <CDBSidebarMenuItem
-                            icon="th-large"
-                            tag="input"
+                            icon="home"
                             >
                                 Inicio
                             </CDBSidebarMenuItem>
