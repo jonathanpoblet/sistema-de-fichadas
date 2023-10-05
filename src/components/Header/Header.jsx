@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
 
 import './header.css';
 
@@ -17,7 +16,7 @@ export default function Header() {
             <img className='nav-logo' src='http://www.grupotaraborelli.com/img/logo-i.png' alt='logo' />
               {/* <img className='nav-logo' src='../../../public/assets/logo.png' alt='logo' /> */}
           </Link>
-          <div class="btn-group dropstart">
+          <div className="btn-group dropstart">
           <img 
             type="button"
             className='nav-user' 
@@ -27,8 +26,8 @@ export default function Header() {
             aria-expanded="false"
           />
           <ul className="dropdown-menu dropdown-menu-dark">
-            <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
-            <li style={{cursor: 'pointer'}} onClick={() => navigate('../') }><a className="dropdown-item" >Logout</a></li>
+            <li><Link className="dropdown-item" to="/perfil">Perfil</Link></li>
+            <li style={{cursor: 'pointer'}} onClick={() => navigate('../') }><a className="dropdown-item" >Cerrar Sesión</a></li>
           </ul>
         </div>
         </div>

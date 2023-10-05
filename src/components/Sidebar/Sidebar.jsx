@@ -33,12 +33,11 @@ const Sidebar = () => {
                                 Perfil
                             </CDBSidebarMenuItem>
                         </Link>
-                        <Link to='/' style={{width: '100'}}>
+                        <Link to='/inventario' style={{width: '100'}}>
                             <CDBSidebarMenuItem
-                            icon="th-large"
-                            tag="input"
+                            icon="certificate"
                             >
-                                Home
+                                Inventario
                             </CDBSidebarMenuItem>
                         </Link>
                         <Link to='/' style={{width: '100'}}>
