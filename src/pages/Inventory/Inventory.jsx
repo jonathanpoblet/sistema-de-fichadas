@@ -9,6 +9,7 @@ import info from './info.json';
 import columns from './columns.json';
 
 import './inventory.css';
+import { formatNumber } from '../../services/formatNumber';
 
 export default function Inventory() {
 
@@ -21,12 +22,6 @@ export default function Inventory() {
     const handleShowModalEdit = () => setShowModalEdit(true);
 
     const [editableProduct, setEditableProduct] = useState({});
-
-
-    function editProduct(id) {
-        const product = info.find(prod => prod.id == id);
-        console.log(product)
-    }
 
     function setEditModal(product) {
         console.log(product);
@@ -55,7 +50,8 @@ export default function Inventory() {
                     <AiFillEdit/>
                 </button>
             ),
-            ...product
+            ...product,
+            cost: formatNumber(product.cost),
         }));
     
         return {
@@ -65,10 +61,10 @@ export default function Inventory() {
     };
     return (
         <>
-            <section className='w-100 m-4 '>
+            <section className='inventory fade-in p-4'>
                 <InventoryModalAdd  show={showModalAdd} handleClose={handleCloseModalAdd} />
                 <InventoryModalEdit  show={showModalEdit} handleClose={handleCloseModalEdit} editableProduct={ editableProduct } />
-                <article className='d-flex align-items-center mb-4 p-3 rounded inventory-title'>
+                <article className='d-flex align-items-center  p-3 rounded inventory-title'>
                     <h1 className='text-light mb-0 fs-4'>INVENTARIO</h1>
                 </article>
                 <article className='d-flex align-items-center mb-4 rounded'>

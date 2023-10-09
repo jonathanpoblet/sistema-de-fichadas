@@ -18,6 +18,8 @@
 .sidebar-main {
   display: flex;
   flex-direction: row;
+  background-color: #051c2e;
+
 }
 
 .bg-general {
