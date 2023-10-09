@@ -1,42 +1,48 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
 import { AiFillEdit } from 'react-icons/ai';
 
 import './inventory.css';
+import InventoryModal from '../../components/Modals/InventoryModal';
 
 export default function Inventory() {
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     function editProduct(id) {
         const product = info.find(prod => prod.id == id);
-        console.log(product) 
     }
 
     let info = [{
         id: '1',
-        name: 'Jonathan Poblet',
-        position: 'System Architect',
-        office: 'Edinburgh',
-        age: '61',
-        date: '2011/04/25',
-        salary: '$320',
+        brand: 'World Fitness',
+        model: 'A213',
+        type: 'Banco Plano',
+        serial: '125125afasffs61',
+        date_purchase: '2020/04/25',
+        cost: '320.500',
     },
     {
         id: '2',
-        name: 'Garrett Winters',
-        position: 'Accountant',
-        office: 'Tokyo',
-        age: '63',
-        date: '2011/07/25',
-        salary: '$170',
+        brand: 'Forza Gym',
+        model: 'PL212',
+        type: 'Maquina Multifunción',
+        serial: '625121515sad3',
+        date_purchase: '2021/07/25',
+        cost: '1.090.242',
     },
     {
         id: '3',
-        name: 'Ashton Cox',
-        position: 'Junior Technical Author',
-        office: 'San Francisco',
-        age: '66',
-        date: '2009/01/12',
-        salary: '$86',
+        brand: 'World Fitness',
+        model: 'SDAS2',
+        type: 'Mancuernas',
+        serial: '616316226atsa6',
+        date_purchase: '2019/01/12',
+        cost: '$15.000',
     }]
 
 
@@ -49,13 +55,8 @@ export default function Inventory() {
             width: 100,
         },
         {
-            label: 'Id',
-            field: 'id',
-            width: 100,
-        },
-        {
-            label: 'Nombre',
-            field: 'name',
+            label: 'Marca',
+            field: 'brand',
             width: 150,
             attributes: {
                 'aria-controls': 'DataTable',
@@ -63,30 +64,30 @@ export default function Inventory() {
             },
         },
         {
-            label: 'Posición',
-            field: 'position',
+            label: 'Modelo',
+            field: 'model',
             width: 270,
         },
         {
-            label: 'Oficina',
-            field: 'office',
+            label: 'Tipo',
+            field: 'type',
             width: 200,
         },
         {
-            label: 'Años',
-            field: 'age',
+            label: 'Número de Serie',
+            field: 'serial',
             sort: 'asc',
             width: 100,
         },
         {
-            label: 'Dia de Inicio',
-            field: 'date',
+            label: 'Fecha de Compra',
+            field: 'date_purchase',
             sort: 'disabled',
             width: 150,
         },
         {
-            label: 'Salario',
-            field: 'salary',
+            label: 'Costo',
+            field: 'cost',
             sort: 'disabled',
             width: 100,
         },
@@ -95,7 +96,9 @@ export default function Inventory() {
     const data = () => {
         for(let i = 0; i < info.length; i++) {
             info[i] = {
-                edit: <button className='btn-sm btn-primary' onClick={() => editProduct(info[i].id)}><AiFillEdit/></button>,
+                edit: <button className='btn-sm btn-primary' onClick={() => {
+                    editProduct(info[i].id);
+                }}><AiFillEdit/></button>,
                 ...info[i] 
             };
         }
@@ -106,31 +109,41 @@ export default function Inventory() {
         };
     };
     return (
-        <section className='w-100 m-4 '>
-            <article className='d-flex align-items-center mb-4 p-3 rounded inventory-title'>
-                <h4 className='text-light mb-0'>INVENTARIO</h4>
-            </article>
-            <CDBContainer className='p-0 bg-general' >
-                <CDBCard className='border-0 rounded'>
-                    <CDBCardBody className='p-4'>
-                    <CDBDataTable 
-                        noBottomColumns
-                        searchLabel='Buscar'
-                        paginationLabel={["←", "→"]}
-                        noRecordsFoundLabel="No se ha encontrado"
-                        infoLabel={["Mostrando", "de", "de (", "datos )"]}
-                        entriesLabel="Mostrar de a"
-                        striped
-                        responsive
-                        hover
-                        entriesOptions={[10, 50, 100]}
-                        entries={10}
-                        pagesAmount={4}
-                        data={data()}
-                    />
-                    </CDBCardBody>
-                </CDBCard>
-            </CDBContainer>
-        </section>
+        <>
+            <section className='w-100 m-4 '>
+                <InventoryModal  show={show} handleClose={handleClose} />
+                <article className='d-flex align-items-center mb-4 p-3 rounded inventory-title'>
+                    <h1 className='text-light mb-0 fs-4'>INVENTARIO</h1>
+                </article>
+                <article className='d-flex align-items-center mb-4 rounded'>
+                    <button className='btn btn-success' data-toggle="modal" data-target="#add-inventory" onClick={
+                        () => handleShow()
+                    }>
+                        Agregar Producto
+                    </button>
+                </article>
+                <CDBContainer className='p-0 bg-general' >
+                    <CDBCard className='border-0 rounded'>
+                        <CDBCardBody className='p-4'>
+                        <CDBDataTable 
+                            noBottomColumns
+                            searchLabel='Buscar'
+                            paginationLabel={["←", "→"]}
+                            noRecordsFoundLabel="No se ha encontrado"
+                            infoLabel={["Mostrando", "de", "de (", "datos )"]}
+                            entriesLabel="Mostrar de a"
+                            striped
+                            responsive
+                            hover
+                            entriesOptions={[10, 50, 100]}
+                            entries={10}
+                            pagesAmount={4}
+                            data={data()}
+                        />
+                        </CDBCardBody>
+                    </CDBCard>
+                </CDBContainer>
+            </section>
+        </>
     );
 };

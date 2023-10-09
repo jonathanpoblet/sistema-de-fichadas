@@ -1,3 +1,11 @@
 .inventory-title {
     background-color: rgb(5, 28, 46);
 }
+
+td {
+    align-self: center !important;
+}
+
+.dataTables_length {
+    align-items: center !important;
+}

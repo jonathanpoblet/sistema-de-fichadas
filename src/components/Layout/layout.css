@@ -24,3 +24,7 @@
   box-shadow: 0px 0px 20px 10px rgba(134, 134, 134, 0.15);
   border-radius: 5px;
 }
+
+.swal2-confirm {
+  background-color: #cccccc !important;
+}
