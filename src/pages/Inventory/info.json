@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "brand": "World Fitness",
+        "model": "A213",
+        "type": "Bancos",
+        "serial": "125125afasffs61",
+        "date_purchase": "2020-04-25",
+        "cost": 320500
+    },
+    {
+        "id": "2",
+        "brand": "Forza Gym",
+        "model": "PL212",
+        "type": "MultiPower",
+        "serial": "625121515sad3",
+        "date_purchase": "2021-07-25",
+        "cost": 1090242
+    },
+    {
+        "id": "3",
+        "brand": "World Fitness",
+        "model": "SDAS2",
+        "type": "Mancuernas",
+        "serial": "616316226atsa6",
+        "date_purchase": "2019-01-12",
+        "cost": 15000
+    }
+]
