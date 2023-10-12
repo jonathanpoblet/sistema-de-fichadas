@@ -7,6 +7,10 @@ nav {
     padding: 12px !important;
 }
 
+header {
+    height: 100%;
+}
+
 .nav-logo {
     width: 160px;
     cursor: pointer;

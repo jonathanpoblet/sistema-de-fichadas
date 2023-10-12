@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
   
 const Sidebar = () => {
     return (
-            <CDBSidebar textColor="#fff" backgroundColor="#051c2e" minWidth='70px' className='sidebar'>
+            <CDBSidebar textColor="#fff" backgroundColor="#051c2e" minWidth='100px' className='sidebar'>
                 <CDBSidebarHeader prefix={<CDBIcon icon="bars" size="sm" />}>
                     Menu
                 </CDBSidebarHeader>

@@ -71,9 +71,9 @@ export default function Clients() {
                         Agregar Cliente
                     </button>
                 </article>
-                <CDBContainer className='p-0 bg-general' >
+                <CDBContainer className='p-0 bg-general w-100' >
                     <CDBCard className='border-0 rounded'>
-                        <CDBCardBody className='p-4'>
+                        <CDBCardBody className='p-4 w-100'>
                         <CDBDataTable 
                             noBottomColumns
                             searchLabel='Buscar'
@@ -88,6 +88,7 @@ export default function Clients() {
                             entries={10}
                             pagesAmount={4}
                             data={data()}
+                            className='w-100'
                         />
                         </CDBCardBody>
                     </CDBCard>
