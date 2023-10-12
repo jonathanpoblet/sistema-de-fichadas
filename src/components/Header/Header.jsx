@@ -19,7 +19,7 @@ export default function Header() {
           <div className="btn-group dropstart">
           <img 
             type="button"
-            className='nav-user' 
+            className='nav-user rounded' 
             src={ img } 
             alt='user'
             data-bs-toggle="dropdown"

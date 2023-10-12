@@ -7,10 +7,6 @@ nav {
     padding: 12px !important;
 }
 
-header {
-    height: 100%;
-}
-
 .nav-logo {
     width: 160px;
     cursor: pointer;
@@ -70,7 +66,13 @@ header {
     color: #333;
 }
 
+
+
 @media screen and (max-width: 991px) {
+    .home-stadistics-container {
+        flex-direction: column;
+    }
+
     .navbar-nav {
         margin-top: 20px;
     }
@@ -84,5 +86,11 @@ header {
     .nav-dropdown-list-item:hover {
         background-color: #125f9b;
         border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-stadistics-container div {
+        padding: 0px !important;
     }
 }

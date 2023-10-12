@@ -9,7 +9,7 @@ export default function HomeHeader({ user }) {
   }
 
   return (
-    <section className='d-flex align-items-center bg-general p-4 home-header-container'>
+    <section className='d-flex align-items-center bg-general p-4 home-header-container mb-4'>
         <img className='rounded-circle mx-4 shadow-p border-1' src='../../../public/assets/user.png' alt='User IMG' style={{width: '80px'}} />
         <div className=' '>
             <h2>Hola, <b style={{color: '#051c2e'}}>{ user.name }</b></h2>
