@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout";
 const Home = lazy(() => import("../pages/Home/Home"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
 const Inventory = lazy(() => import("../pages/Inventory/Inventory"));
+const Clients = lazy(() => import("../pages/Clients/Clients"));
 const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 
 export default function AppRoute() {
@@ -21,6 +22,7 @@ export default function AppRoute() {
             <Route path="/" element={<Home user={ user } />} />
             <Route path="/perfil" element={<Profile />} />
             <Route path="/inventario" element={<Inventory />} />
+            <Route path="/clientes" element={<Clients />} />
           </Routes>
         </Layout>
       </Router>

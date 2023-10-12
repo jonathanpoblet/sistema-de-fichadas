@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Jonathan",
+        "lastname": "Poblet",
+        "age": 52,
+        "dni": 11235212,
+        "email": "jonathan@hotmail.com",
+        "cel": "115215725",
+        "domicile": "Yrigoyen 8521"
+    },
+    {
+        "id": "2",
+        "name": "Pablo",
+        "lastname": "Reinoso",
+        "age": 24,
+        "dni": 39251251,
+        "email": "pablo@hotmail.com",
+        "cel": "116827621",
+        "domicile": "Rivadavia 2812"
+    },
+    {
+        "id": "3",
+        "name": "Maria",
+        "lastname": "Gonzales",
+        "age": 19,
+        "dni": 46921812,
+        "email": "maria@hotmail.com",
+        "cel": "116124124",
+        "domicile": "Alem 2141"
+    }
+]

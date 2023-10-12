@@ -40,6 +40,13 @@ const Sidebar = () => {
                                 Inventario
                             </CDBSidebarMenuItem>
                         </Link>
+                        <Link to='/clientes' style={{width: '100'}}>
+                            <CDBSidebarMenuItem
+                            icon="users"
+                            >
+                                Clientes
+                            </CDBSidebarMenuItem>
+                        </Link>
                     </CDBSidebarMenu>
                 </CDBSidebarContent>
             </CDBSidebar>

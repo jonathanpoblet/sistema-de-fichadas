@@ -1,0 +1,54 @@
+[
+    {
+        "label": "",
+        "field": "edit",
+        "width":"10"
+    },
+    {
+        "label": "ID",
+        "field": "id",
+        "width": "270"
+    },
+    {
+        "label": "Nombre",
+        "field": "name",
+        "width": "150",
+        "attributes": {
+            "aria-controls": "DataTable",
+            "aria-label": "Name"
+        }
+    },
+    {
+        "label": "Apellido",
+        "field": "lastname",
+        "width": "270"
+    },
+    {
+        "label": "Edad",
+        "field": "age",
+        "width": "200"
+    },
+    {
+        "label": "DNI",
+        "field": "dni",
+        "width": "200"
+    },
+    {
+        "label": "Email",
+        "field": "email",
+        "sort": "asc",
+        "width": "100"
+    },
+    {
+        "label": "Celular",
+        "field": "cel",
+        "sort": "disabled",
+        "width": "150"
+    },
+    {
+        "label": "Domicilio",
+        "field": "domicile",
+        "sort": "disabled",
+        "width": "100"
+    }
+]
