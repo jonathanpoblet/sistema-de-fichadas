@@ -3,7 +3,7 @@
     background-color: #051c2e;
 }
 
-.pro-menu{
+.pro-menu {
     padding: 0 !important;
     margin: 0;
 }
@@ -14,4 +14,13 @@ nav ul {
 
 nav ul li {
     margin: 0;
+}
+
+.sc-cfxfcM {
+    transition: 0.5s;
+}
+
+.sc-cfxfcM:hover {
+    background-color: #0f3e61 !important;
+    border-radius: 5px;
 }
