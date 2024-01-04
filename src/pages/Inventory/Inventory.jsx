@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
 import { AiFillEdit } from 'react-icons/ai';
 import InventoryModalAdd from '../../components/Modals/InventoryModalAdd';
@@ -16,7 +16,7 @@ export default function Inventory() {
     const [showModalAdd, setShowModalAdd] = useState(false);
     const handleCloseModalAdd = () => setShowModalAdd(false);
     const handleShowModalAdd = () => setShowModalAdd(true);
-    
+
     const [showModalEdit, setShowModalEdit] = useState(false);
     const handleCloseModalEdit = () => setShowModalEdit(false);
     const handleShowModalEdit = () => setShowModalEdit(true);
@@ -39,21 +39,21 @@ export default function Inventory() {
     const data = () => {
         const formattedData = info.map(product => ({
             edit: (
-                <button  
-                    type='button' 
-                    className='btn-sm btn-primary' 
+                <button
+                    type='button'
+                    className='btn-sm btn-primary'
                     onClick={() => {
                         handleShowModalEdit();
                         setEditModal(product)
-                    } }
+                    }}
                 >
-                    <AiFillEdit/>
+                    <AiFillEdit />
                 </button>
             ),
             ...product,
             cost: formatNumber(product.cost),
         }));
-    
+
         return {
             columns,
             rows: formattedData
@@ -61,9 +61,9 @@ export default function Inventory() {
     };
     return (
         <>
-            <section className='inventory fade-in p-4'>
-                <InventoryModalAdd  show={showModalAdd} handleClose={handleCloseModalAdd} />
-                <InventoryModalEdit  show={showModalEdit} handleClose={handleCloseModalEdit} editableProduct={ editableProduct } />
+            <section className='inventory fade-in p-4 '>
+                <InventoryModalAdd show={showModalAdd} handleClose={handleCloseModalAdd} />
+                <InventoryModalEdit show={showModalEdit} handleClose={handleCloseModalEdit} editableProduct={editableProduct} />
                 <article className='d-flex align-items-center  p-3 rounded inventory-title'>
                     <h1 className='text-light mb-0 fs-4'>INVENTARIO</h1>
                 </article>
@@ -74,24 +74,24 @@ export default function Inventory() {
                         Agregar Producto
                     </button>
                 </article>
-                <CDBContainer className='p-0 bg-general' >
+                <CDBContainer className='p-0 bg-general'>
                     <CDBCard className='border-0 rounded'>
                         <CDBCardBody className='p-4'>
-                        <CDBDataTable 
-                            noBottomColumns
-                            searchLabel='Buscar'
-                            paginationLabel={["←", "→"]}
-                            noRecordsFoundLabel="No se ha encontrado"
-                            infoLabel={["Mostrando", "de", "de (", "datos )"]}
-                            entriesLabel="Mostrar de a"
-                            striped
-                            responsive
-                            hover
-                            entriesOptions={[10, 50, 100]}
-                            entries={10}
-                            pagesAmount={4}
-                            data={data()}
-                        />
+                            <CDBDataTable
+                                noBottomColumns
+                                searchLabel='Buscar'
+                                paginationLabel={["←", "→"]}
+                                noRecordsFoundLabel="No se ha encontrado"
+                                infoLabel={["Mostrando", "de", "de (", "datos )"]}
+                                entriesLabel="Mostrar de a"
+                                striped
+                                responsive
+                                hover
+                                entriesOptions={[10, 50, 100]}
+                                entries={10}
+                                pagesAmount={4}
+                                data={data()}
+                            />
                         </CDBCardBody>
                     </CDBCard>
                 </CDBContainer>
