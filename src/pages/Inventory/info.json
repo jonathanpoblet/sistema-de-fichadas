@@ -6,7 +6,8 @@
         "type": "Bancos",
         "serial": "125125afasffs61",
         "date_purchase": "2020-04-25",
-        "cost": 320500
+        "cost": 320500,
+        "quantity": 5
     },
     {
         "id": "2",
@@ -15,7 +16,8 @@
         "type": "MultiPower",
         "serial": "625121515sad3",
         "date_purchase": "2021-07-25",
-        "cost": 1090242
+        "cost": 1090242,
+        "quantity": 3
     },
     {
         "id": "3",
@@ -24,6 +26,7 @@
         "type": "Mancuernas",
         "serial": "616316226atsa6",
         "date_purchase": "2019-01-12",
-        "cost": 15000
+        "cost": 15000,
+        "quantity": 50
     }
 ]

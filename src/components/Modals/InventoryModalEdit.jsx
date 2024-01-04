@@ -5,15 +5,18 @@ import Swal from 'sweetalert2';
 
 export default function InventoryModalEdit({ show, handleClose, editableProduct }) {
 
-  const editProduct = async() => {
+  const editProduct = async () => {
     const brand = document.getElementById('edit-product-brand').value
     const model = document.getElementById('edit-product-model').value
     const type = document.getElementById('edit-product-type').value
     const serial = document.getElementById('edit-product-serial').value
     const date_purchase = document.getElementById('edit-product-datePurchase').value
     const cost = document.getElementById('edit-product-cost').value
+    const quantity = document.getElementById('edit-product-quantity').value
 
-    if(!brand || !model || !type || !serial || !date_purchase || !cost) return Swal.fire('Faltan datos')
+
+    console.log(quantity)
+    if (!brand || !model || !type || !serial || !date_purchase || !cost || !quantity) return Swal.fire('Faltan datos')
 
     const form = {
       brand,
@@ -21,7 +24,8 @@ export default function InventoryModalEdit({ show, handleClose, editableProduct 
       type,
       serial,
       date_purchase,
-      cost
+      cost,
+      quantity
     }
 
     console.log(form)
@@ -40,17 +44,17 @@ export default function InventoryModalEdit({ show, handleClose, editableProduct 
           <Form>
             <Form.Group className='mb-3'>
               <Form.Label>Marca</Form.Label>
-              <Form.Control type='text' id='edit-product-brand' defaultValue={ editableProduct.brand } />
+              <Form.Control type='text' id='edit-product-brand' defaultValue={editableProduct.brand} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
               <Form.Label>Modelo</Form.Label>
-              <Form.Control type='text' id='edit-product-model'  defaultValue={ editableProduct.model } />
+              <Form.Control type='text' id='edit-product-model' defaultValue={editableProduct.model} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
               <Form.Label>Tipo</Form.Label>
-              <Form.Select id='edit-product-type'  defaultValue={ editableProduct.type } >
+              <Form.Select id='edit-product-type' defaultValue={editableProduct.type} >
                 <option value=''>--- Seleccione el tipo ---</option>
                 <option value='Pesas'>Pesas</option>
                 <option value='Máquinas de cardio'>Máquinas de Cardio</option>
@@ -63,19 +67,24 @@ export default function InventoryModalEdit({ show, handleClose, editableProduct 
 
             <Form.Group className='mb-3'>
               <Form.Label>Número de Serie</Form.Label>
-              <Form.Control type='text' id='edit-product-serial' defaultValue={ editableProduct.serial } />
+              <Form.Control type='text' id='edit-product-serial' defaultValue={editableProduct.serial} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
               <Form.Label>Fecha de Compra</Form.Label>
-              <Form.Control type='date' id='edit-product-datePurchase' defaultValue={ editableProduct.date_purchase } />
+              <Form.Control type='date' id='edit-product-datePurchase' defaultValue={editableProduct.date_purchase} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
               <Form.Label>Costo</Form.Label>
-              <Form.Control type='number' id='edit-product-cost' defaultValue={ editableProduct.cost }  />
+              <Form.Control type='number' id='edit-product-cost' defaultValue={editableProduct.cost} />
             </Form.Group>
-          
+
+            <Form.Group className='mb-3'>
+              <Form.Label>Cantidad</Form.Label>
+              <Form.Control type='number' id='edit-product-quantity' defaultValue={editableProduct.quantity} />
+            </Form.Group>
+
           </Form>
         </Modal.Body>
         <Modal.Footer>

@@ -31,7 +31,8 @@ export default function Inventory() {
             type: product.type,
             serial: product.serial,
             date_purchase: product.date_purchase,
-            cost: product.cost
+            cost: product.cost,
+            quantity: product.quantity
         })
         // document.getElementById('edit-product-brand').value = product.brand;
     }

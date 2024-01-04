@@ -40,5 +40,11 @@
         "field": "cost",
         "sort": "disabled",
         "width": "100"
+    },
+    {
+        "label": "Cantidad",
+        "field": "quantity",
+        "sort": "disabled",
+        "width": "100"
     }
 ]
