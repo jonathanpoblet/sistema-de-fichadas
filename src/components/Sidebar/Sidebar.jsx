@@ -16,11 +16,8 @@ const Sidebar = () => {
           <Link to='/perfil' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='user'>Perfil</CDBSidebarMenuItem>
           </Link>
-          <Link to='/inventario' style={{ width: '100' }}>
-            <CDBSidebarMenuItem icon='shopping-bag'>Inventario</CDBSidebarMenuItem>
-          </Link>
-          <Link to='/clientes' style={{ width: '100' }}>
-            <CDBSidebarMenuItem icon='users'>Clientes</CDBSidebarMenuItem>
+          <Link to='/personal' style={{ width: '100' }}>
+            <CDBSidebarMenuItem icon='users'>Personal</CDBSidebarMenuItem>
           </Link>
         </CDBSidebarMenu>
       </CDBSidebarContent>

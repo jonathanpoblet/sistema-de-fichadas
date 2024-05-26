@@ -1,5 +1,5 @@
 header {
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -9,14 +9,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #051c2e;
-  padding: 12px !important;
+  padding: 15px !important;
   border-radius: 10px;
 }
 
 .nav-logo {
   width: 160px;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 .nav-menu-button {
