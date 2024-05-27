@@ -1,35 +1,37 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import Swal from 'sweetalert2';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Swal from "sweetalert2";
 
-export default function PersonalModalEdit({ show, handleClose, editablePersonal }) {
+export default function PersonalModalEdit({ companies, show, handleClose, editablePersonal }) {
   const editPersonal = async () => {
-    const name = document.getElementById('edit-personal-name').value;
-    const lastname = document.getElementById('edit-personal-lastname').value;
-    const age = document.getElementById('edit-personal-age').value;
-    const dni = document.getElementById('edit-personal-dni').value;
-    const email = document.getElementById('edit-personal-email').value;
-    const cel = document.getElementById('edit-personal-cel').value;
-    const domicile = document.getElementById('edit-personal-domicile').value;
+    const nombre = document.getElementById("edit-personal-name").value;
+    const apellido = document.getElementById("edit-personal-lastname").value;
+    const age = document.getElementById("edit-personal-age").value;
+    const dni = document.getElementById("edit-personal-dni").value;
+    const email = document.getElementById("edit-personal-email").value;
+    const cel = document.getElementById("edit-personal-cel").value;
+    const empresa = document.getElementById("edit-personal-company").value;
 
-    if (!name || !lastname || !age || !dni || !email || !cel || !domicile) return Swal.fire('Faltan datos');
+    if (!nombre || !apellido || !age || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
 
     const form = {
-      name,
-      lastname,
+      nombre,
+      apellido,
       age,
       dni,
       email,
       cel,
-      domicile,
+      empresa,
     };
 
     console.log(form);
   };
 
+  console.log(companies);
+
   return (
-    <div className='modal show' style={{ display: '', position: 'initial' }}>
+    <div className='modal show' style={{ display: "", position: "initial" }}>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className='bg-primary text-light'>
           <Modal.Title>Editar Personal</Modal.Title>
@@ -38,17 +40,12 @@ export default function PersonalModalEdit({ show, handleClose, editablePersonal 
           <Form>
             <Form.Group className='mb-3'>
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type='text' id='edit-personal-name' defaultValue={editablePersonal.name} />
+              <Form.Control type='text' id='edit-personal-name' defaultValue={editablePersonal.nombre} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
               <Form.Label>Apellido</Form.Label>
-              <Form.Control type='text' id='edit-personal-lastname' defaultValue={editablePersonal.lastname} />
-            </Form.Group>
-
-            <Form.Group className='mb-3'>
-              <Form.Label>Edad</Form.Label>
-              <Form.Control type='number' id='edit-personal-age' defaultValue={editablePersonal.age} />
+              <Form.Control type='text' id='edit-personal-lastname' defaultValue={editablePersonal.apellido} />
             </Form.Group>
 
             <Form.Group className='mb-3'>
@@ -67,8 +64,17 @@ export default function PersonalModalEdit({ show, handleClose, editablePersonal 
             </Form.Group>
 
             <Form.Group className='mb-3'>
-              <Form.Label>Domicilio</Form.Label>
-              <Form.Control type='text' id='edit-personal-domicile' defaultValue={editablePersonal.domicile} />
+              <Form.Label>Empresa</Form.Label>
+              <Form.Select id='edit-personal-company' defaultValue={editablePersonal.empresa}>
+                <option value=''>--- Seleccione la empresa ---</option>
+                {companies.map(company => {
+                  return (
+                    <option key={company.id_int_empresas} value={company.id_int_empresas}>
+                      {company.empresa}
+                    </option>
+                  );
+                })}
+              </Form.Select>
             </Form.Group>
           </Form>
         </Modal.Body>
