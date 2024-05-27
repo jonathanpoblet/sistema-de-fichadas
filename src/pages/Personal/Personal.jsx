@@ -89,7 +89,7 @@ export default function Clients() {
                 <CDBDataTable
                   noBottomColumns
                   searchLabel='Buscar'
-                  paginationLabel={["←", "→"]}
+                  paginationLabel={["Anterior", "Siguiente"]}
                   noRecordsFoundLabel='No se ha encontrado'
                   infoLabel={["Mostrando", "de", "de (", "datos )"]}
                   entriesLabel='Mostrar de a'

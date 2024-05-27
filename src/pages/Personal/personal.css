@@ -8,11 +8,3 @@
   background-color: rgb(5, 28, 46);
   margin-bottom: 20px;
 }
-
-td {
-  align-self: center !important;
-}
-
-.dataTables_length {
-  align-items: center !important;
-}
