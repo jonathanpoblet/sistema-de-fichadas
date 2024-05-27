@@ -73,7 +73,7 @@ export default function Clients() {
     return (
       <>
         <section className='personal fade-in'>
-          <PersonalModalAdd show={showModalAdd} handleClose={handleCloseModalAdd} />
+          <PersonalModalAdd companies={companies} show={showModalAdd} handleClose={handleCloseModalAdd} />
           <PersonalModalEdit companies={companies} show={showModalEdit} handleClose={handleCloseModalEdit} editablePersonal={editablePersonal} />
           <article className='d-flex align-items-center  p-3 rounded personal-title'>
             <h1 className='text-light mb-0 fs-4'>PERSONAL</h1>

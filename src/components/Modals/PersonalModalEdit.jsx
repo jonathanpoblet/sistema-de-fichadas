@@ -13,7 +13,7 @@ export default function PersonalModalEdit({ companies, show, handleClose, editab
     const cel = document.getElementById("edit-personal-cel").value;
     const empresa = document.getElementById("edit-personal-company").value;
 
-    if (!nombre || !apellido || !age || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
+    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
 
     const form = {
       nombre,

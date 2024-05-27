@@ -1,35 +1,33 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import Swal from 'sweetalert2';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Swal from "sweetalert2";
 
-export default function PersonalModalAdd({ show, handleClose }) {
+export default function PersonalModalAdd({ companies, show, handleClose }) {
   const addPersonal = async () => {
-    const name = document.getElementById('add-personal-name').value;
-    const lastname = document.getElementById('add-personal-lastname').value;
-    const age = document.getElementById('add-personal-age').value;
-    const dni = document.getElementById('add-personal-dni').value;
-    const email = document.getElementById('add-personal-email').value;
-    const cel = document.getElementById('add-personal-cel').value;
-    const domicile = document.getElementById('add-personal-domicile').value;
+    const nombre = document.getElementById("add-personal-name").value;
+    const apellido = document.getElementById("add-personal-lastname").value;
+    const dni = document.getElementById("add-personal-dni").value;
+    const email = document.getElementById("add-personal-email").value;
+    const cel = document.getElementById("add-personal-cel").value;
+    const empresa = document.getElementById("add-personal-domicile").value;
 
-    if (!name || !lastname || !age || !dni || !email || !cel || !domicile) return Swal.fire('Faltan datos');
+    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
 
     const form = {
-      name,
-      lastname,
-      age,
+      nombre,
+      apellido,
       dni,
       email,
       cel,
-      domicile,
+      empresa,
     };
 
     console.log(form);
   };
 
   return (
-    <div className='modal show' style={{ display: '', position: 'initial' }}>
+    <div className='modal show' style={{ display: "", position: "initial" }}>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className='bg-success text-light'>
           <Modal.Title>Agregar Personal</Modal.Title>
@@ -44,11 +42,6 @@ export default function PersonalModalAdd({ show, handleClose }) {
             <Form.Group className='mb-3'>
               <Form.Label>Apellido</Form.Label>
               <Form.Control type='text' id='add-personal-lastname' />
-            </Form.Group>
-
-            <Form.Group className='mb-3'>
-              <Form.Label>Edad</Form.Label>
-              <Form.Control type='number' id='add-personal-age' />
             </Form.Group>
 
             <Form.Group className='mb-3'>
@@ -67,8 +60,17 @@ export default function PersonalModalAdd({ show, handleClose }) {
             </Form.Group>
 
             <Form.Group className='mb-3'>
-              <Form.Label>Domicilio</Form.Label>
-              <Form.Control type='text' id='add-personal-domicile' />
+              <Form.Label>Empresa</Form.Label>
+              <Form.Select id='add-personal-company'>
+                <option value=''>--- Seleccione la empresa ---</option>
+                {companies.map(company => {
+                  return (
+                    <option key={company.id_int_empresas} value={company.id_int_empresas}>
+                      {company.empresa}
+                    </option>
+                  );
+                })}
+              </Form.Select>
             </Form.Group>
           </Form>
         </Modal.Body>
