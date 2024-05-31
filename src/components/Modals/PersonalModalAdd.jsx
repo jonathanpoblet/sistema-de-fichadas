@@ -22,8 +22,6 @@ export default function PersonalModalAdd({ companies, show, handleClose }) {
       cel,
       empresa,
     };
-
-    console.log(form);
   };
 
   return (

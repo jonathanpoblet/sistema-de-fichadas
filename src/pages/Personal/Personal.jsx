@@ -3,12 +3,12 @@ import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from "cdbreact";
 import { AiFillEdit } from "react-icons/ai";
 import PersonalModalAdd from "../../components/Modals/PersonalModalAdd";
 import PersonalModalEdit from "../../components/Modals/PersonalModalEdit";
-import { getCompanies } from "../../services/getCompanies";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
+import { getCompanies } from "../../services/getCompanies";
 import columns from "./columns.json";
 
 import "./Personal.css";
-import PageHeader from "../../components/PageHeader/PageHeader";
 
 export default function Personal() {
   const [personal, setPersonal] = useState([]);
@@ -28,7 +28,6 @@ export default function Personal() {
     async function getPersonal() {
       const response = await fetch("http://grupotaraborelli.com/lib/backend/fichadas/get-datos-empleados.php");
       const data = await response.json();
-      console.log(data);
       setPersonal(data);
     }
 

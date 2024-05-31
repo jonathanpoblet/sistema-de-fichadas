@@ -24,11 +24,7 @@ export default function PersonalModalEdit({ companies, show, handleClose, editab
       cel,
       empresa,
     };
-
-    console.log(form);
   };
-
-  console.log(companies);
 
   return (
     <div className='modal show' style={{ display: "", position: "initial" }}>
