@@ -1,7 +1,7 @@
 import React from "react";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 import "./punchIn.css";
-import PageHeader from "../../components/PageHeader/PageHeader";
 
 export default function PunchIn() {
   function postPunchIn() {
