@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <CDBSidebar textColor='#fff' maxWidth='220px' minWidth='100px' className='sidebar'>
+    <CDBSidebar toggled={true} textColor='#fff' maxWidth='220px' minWidth='100px' className='sidebar'>
       <CDBSidebarHeader prefix={<CDBIcon icon='bars' size='sm' />}>Menu</CDBSidebarHeader>
 
       <CDBSidebarContent>
         <CDBSidebarMenu>
           <Link to='/' style={{ width: "100" }}>
             <CDBSidebarMenuItem icon='home'>Inicio</CDBSidebarMenuItem>
+          </Link>
+          <Link to='/fichar' style={{ width: "100" }}>
+            <CDBSidebarMenuItem icon='credit-card'>Fichar</CDBSidebarMenuItem>
           </Link>
           <Link to='/perfil' style={{ width: "100" }}>
             <CDBSidebarMenuItem icon='user'>Perfil</CDBSidebarMenuItem>

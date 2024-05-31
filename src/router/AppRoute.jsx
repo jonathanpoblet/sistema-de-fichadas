@@ -1,12 +1,14 @@
-import { lazy, Suspense } from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Layout from '../components/Layout/Layout';
+import { lazy, Suspense } from "react";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Layout from "../components/Layout/Layout";
 
-const Home = lazy(() => import('../pages/Home/Home'));
-const Profile = lazy(() => import('../pages/Profile/Profile'));
-const Personal = lazy(() => import('../pages/Personal/Personal'));
-const Spinner = lazy(() => import('../components/Spinner/Spinner'));
+const Home = lazy(() => import("../pages/Home/Home"));
+const Profile = lazy(() => import("../pages/Profile/Profile"));
+const Personal = lazy(() => import("../pages/Personal/Personal"));
+const PunchIn = lazy(() => import("../pages/PunchIn/PunchIn"));
+
+const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 
 export default function AppRoute() {
   const user = useSelector(state => state.auth.user);
@@ -20,6 +22,7 @@ export default function AppRoute() {
             <Route path='/' element={<Home user={user} />} />
             <Route path='/perfil' element={<Profile />} />
             <Route path='/personal' element={<Personal />} />
+            <Route path='/fichar' element={<PunchIn />} />
           </Routes>
         </Layout>
       </Router>
