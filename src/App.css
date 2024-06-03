@@ -35,3 +35,13 @@ td {
 .fUDToy {
   border: none !important;
 }
+
+.swal2-title,
+.swal2-icon {
+  overflow-y: hidden !important;
+}
+
+.swal2-confirm {
+  background-color: #051c2e !important;
+  color: #fff !important;
+}
