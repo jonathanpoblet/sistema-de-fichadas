@@ -1,7 +1,7 @@
-import { CDBSidebar, CDBSidebarHeader, CDBSidebarMenuItem, CDBSidebarContent, CDBSidebarMenu, CDBIcon } from "cdbreact";
+import { CDBSidebar, CDBSidebarHeader, CDBSidebarMenuItem, CDBSidebarContent, CDBSidebarMenu, CDBIcon } from 'cdbreact';
 
-import "./sidebar.css";
-import { Link } from "react-router-dom";
+import './sidebar.css';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
@@ -10,16 +10,13 @@ const Sidebar = () => {
 
       <CDBSidebarContent>
         <CDBSidebarMenu>
-          <Link to='/' style={{ width: "100" }}>
+          <Link to='/' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='home'>Inicio</CDBSidebarMenuItem>
           </Link>
-          <Link to='/fichar' style={{ width: "100" }}>
+          <Link to='/fichar' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='credit-card'>Fichar</CDBSidebarMenuItem>
           </Link>
-          <Link to='/perfil' style={{ width: "100" }}>
-            <CDBSidebarMenuItem icon='user'>Perfil</CDBSidebarMenuItem>
-          </Link>
-          <Link to='/personal' style={{ width: "100" }}>
+          <Link to='/personal' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='users'>Personal</CDBSidebarMenuItem>
           </Link>
         </CDBSidebarMenu>
