@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./pageHeader.css";
+import './pageHeader.css';
 
 export default function PageHeader({ title }) {
   return (

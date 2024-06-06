@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from "cdbreact";
-import { AiFillEdit } from "react-icons/ai";
-import PersonalModalAdd from "../../components/Modals/PersonalModalAdd";
-import PersonalModalEdit from "../../components/Modals/PersonalModalEdit";
-import PageHeader from "../../components/PageHeader/PageHeader";
+import React, { useState, useEffect } from 'react';
+import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
+import { AiFillEdit } from 'react-icons/ai';
+import PersonalModalAdd from '../../components/Modals/PersonalModalAdd';
+import PersonalModalEdit from '../../components/Modals/PersonalModalEdit';
+import PageHeader from '../../components/PageHeader/PageHeader';
 
-import { getCompanies } from "../../services/getCompanies";
-import columns from "./columns.json";
+import { getCompanies } from '../../services/getCompanies';
+import columns from './columns.json';
 
-import "./Personal.css";
+import './Personal.css';
 
 export default function Personal() {
   const [personal, setPersonal] = useState([]);
@@ -26,7 +26,7 @@ export default function Personal() {
 
   useEffect(() => {
     async function getPersonal() {
-      const response = await fetch("http://grupotaraborelli.com/lib/backend/fichadas/get-datos-empleados.php");
+      const response = await fetch('http://grupotaraborelli.com/lib/backend/fichadas/get-datos-empleados.php');
       const data = await response.json();
       setPersonal(data);
     }
@@ -86,9 +86,9 @@ export default function Personal() {
               <CDBDataTable
                 noBottomColumns
                 searchLabel='Buscar'
-                paginationLabel={["Anterior", "Siguiente"]}
+                paginationLabel={['Anterior', 'Siguiente']}
                 noRecordsFoundLabel='No se ha encontrado'
-                infoLabel={["Mostrando", "de", "de (", "datos )"]}
+                infoLabel={['Mostrando', 'de', 'de (', 'datos )']}
                 entriesLabel='Mostrar de a'
                 striped
                 responsive

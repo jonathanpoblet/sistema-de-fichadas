@@ -1,8 +1,8 @@
-import Header from "../Header/Header";
+import Header from '../Header/Header';
 
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from '../Sidebar/Sidebar';
 
-import "./layout.css";
+import './layout.css';
 
 export default function Layout({ children }) {
   return (

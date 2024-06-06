@@ -1,19 +1,19 @@
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
-import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import Swal from 'sweetalert2';
 
 export default function PersonalModalEdit({ companies, show, handleClose, editablePersonal }) {
   const editPersonal = async () => {
-    const nombre = document.getElementById("edit-personal-name").value;
-    const apellido = document.getElementById("edit-personal-lastname").value;
-    const age = document.getElementById("edit-personal-age").value;
-    const dni = document.getElementById("edit-personal-dni").value;
-    const email = document.getElementById("edit-personal-email").value;
-    const cel = document.getElementById("edit-personal-cel").value;
-    const empresa = document.getElementById("edit-personal-company").value;
+    const nombre = document.getElementById('edit-personal-name').value;
+    const apellido = document.getElementById('edit-personal-lastname').value;
+    const age = document.getElementById('edit-personal-age').value;
+    const dni = document.getElementById('edit-personal-dni').value;
+    const email = document.getElementById('edit-personal-email').value;
+    const cel = document.getElementById('edit-personal-cel').value;
+    const empresa = document.getElementById('edit-personal-company').value;
 
-    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
+    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire('Faltan datos');
 
     const form = {
       nombre,
@@ -27,7 +27,7 @@ export default function PersonalModalEdit({ companies, show, handleClose, editab
   };
 
   return (
-    <div className='modal show' style={{ display: "", position: "initial" }}>
+    <div className='modal show' style={{ display: '', position: 'initial' }}>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className='bg-primary text-light'>
           <Modal.Title>Editar Personal</Modal.Title>

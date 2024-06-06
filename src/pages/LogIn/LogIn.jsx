@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./logIn.css";
+import './logIn.css';
 
 export default function LogIn() {
   return <div>LogIn</div>;

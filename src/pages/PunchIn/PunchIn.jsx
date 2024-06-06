@@ -1,9 +1,9 @@
-import React from "react";
-import PageHeader from "../../components/PageHeader/PageHeader";
+import React from 'react';
+import PageHeader from '../../components/PageHeader/PageHeader';
 
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
-import "./punchIn.css";
+import './punchIn.css';
 
 const REFERENCE_LAT = -34.6246251543433;
 const REFERENCE_LNG = -58.45243991674626;
@@ -16,35 +16,35 @@ export default function PunchIn() {
           const { latitude, longitude } = position.coords;
           if (isWithinRadius(latitude, longitude, REFERENCE_LAT, REFERENCE_LNG, 1)) {
             Swal.fire({
-              icon: "success",
-              title: "Fichada Enviada",
-              text: "Has enviado con éxito tu fichada",
-              confirmButtonText: "Continuar",
+              icon: 'success',
+              title: 'Fichada Enviada',
+              text: 'Has enviado con éxito tu fichada',
+              confirmButtonText: 'Continuar',
             });
           } else {
             Swal.fire({
-              icon: "error",
-              title: "Error",
-              text: "No te encuentras dentro del rango de tu domicilio de trabajo",
-              confirmButtonText: "Cancelar",
+              icon: 'error',
+              title: 'Error',
+              text: 'No te encuentras dentro del rango de tu domicilio de trabajo',
+              confirmButtonText: 'Cancelar',
             });
           }
         },
         error => {
           Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Error del servidor al realizar la fichada",
-            confirmButtonText: "Cancelar",
+            icon: 'error',
+            title: 'Error',
+            text: 'Error del servidor al realizar la fichada',
+            confirmButtonText: 'Cancelar',
           });
         }
       );
     } else {
       Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "La geolocalización no es soportada por el navegador",
-        confirmButtonText: "Cancelar",
+        icon: 'error',
+        title: 'Error',
+        text: 'La geolocalización no es soportada por el navegador',
+        confirmButtonText: 'Cancelar',
       });
     }
   }

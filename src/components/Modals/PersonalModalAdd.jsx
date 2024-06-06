@@ -1,18 +1,18 @@
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
-import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import Swal from 'sweetalert2';
 
 export default function PersonalModalAdd({ companies, show, handleClose }) {
   const addPersonal = async () => {
-    const nombre = document.getElementById("add-personal-name").value;
-    const apellido = document.getElementById("add-personal-lastname").value;
-    const dni = document.getElementById("add-personal-dni").value;
-    const email = document.getElementById("add-personal-email").value;
-    const cel = document.getElementById("add-personal-cel").value;
-    const empresa = document.getElementById("add-personal-domicile").value;
+    const nombre = document.getElementById('add-personal-name').value;
+    const apellido = document.getElementById('add-personal-lastname').value;
+    const dni = document.getElementById('add-personal-dni').value;
+    const email = document.getElementById('add-personal-email').value;
+    const cel = document.getElementById('add-personal-cel').value;
+    const empresa = document.getElementById('add-personal-domicile').value;
 
-    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire("Faltan datos");
+    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire('Faltan datos');
 
     const form = {
       nombre,
@@ -25,7 +25,7 @@ export default function PersonalModalAdd({ companies, show, handleClose }) {
   };
 
   return (
-    <div className='modal show' style={{ display: "", position: "initial" }}>
+    <div className='modal show' style={{ display: '', position: 'initial' }}>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className='bg-success text-light'>
           <Modal.Title>Agregar Personal</Modal.Title>
