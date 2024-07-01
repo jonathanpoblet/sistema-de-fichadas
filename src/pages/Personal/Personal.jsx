@@ -69,7 +69,7 @@ export default function Personal() {
     };
   };
 
-  if (personal && companies)
+  if (companies)
     return (
       <section className='personal fade-in'>
         <PersonalModalAdd companies={companies} show={showModalAdd} handleClose={handleCloseModalAdd} />
@@ -80,28 +80,36 @@ export default function Personal() {
             Agregar Personal
           </button>
         </article>
-        <CDBContainer className='p-0 bg-general w-100 m-0'>
-          <CDBCard className='border-0 rounded'>
-            <CDBCardBody className='p-4 w-100'>
-              <CDBDataTable
-                noBottomColumns
-                searchLabel='Buscar'
-                paginationLabel={['Anterior', 'Siguiente']}
-                noRecordsFoundLabel='No se ha encontrado'
-                infoLabel={['Mostrando', 'de', 'de (', 'datos )']}
-                entriesLabel='Mostrar de a'
-                striped
-                responsive
-                hover
-                entriesOptions={[10, 50, 100]}
-                entries={10}
-                pagesAmount={4}
-                data={data()}
-                className='w-100'
-              />
-            </CDBCardBody>
-          </CDBCard>
-        </CDBContainer>
+        {personal.length !== 0 ? (
+          <CDBContainer className='p-0 bg-general w-100 m-0'>
+            <CDBCard className='border-0 rounded'>
+              <CDBCardBody className='p-4 w-100'>
+                <CDBDataTable
+                  noBottomColumns
+                  searchLabel='Buscar'
+                  paginationLabel={['Anterior', 'Siguiente']}
+                  noRecordsFoundLabel='No se ha encontrado'
+                  infoLabel={['Mostrando', 'de', 'de (', 'datos )']}
+                  entriesLabel='Mostrar de a'
+                  striped
+                  responsive
+                  hover
+                  entriesOptions={[10, 50, 100]}
+                  entries={10}
+                  pagesAmount={4}
+                  data={data()}
+                  className='w-100'
+                />
+              </CDBCardBody>
+            </CDBCard>
+          </CDBContainer>
+        ) : (
+          <CDBContainer className='p-0 bg-general w-100 m-0'>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img src='./assets/loader.gif' style={{ width: '200px' }} />
+            </div>
+          </CDBContainer>
+        )}
       </section>
     );
 }
