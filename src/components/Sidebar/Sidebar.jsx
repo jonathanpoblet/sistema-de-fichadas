@@ -13,7 +13,7 @@ const Sidebar = () => {
           <Link to='/' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='home'>Inicio</CDBSidebarMenuItem>
           </Link>
-          <Link to='/fichar' style={{ width: '100' }}>
+          <Link to='/fichero' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='credit-card'>Fichero</CDBSidebarMenuItem>
           </Link>
           <Link to='/personal' style={{ width: '100' }}>

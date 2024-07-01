@@ -25,7 +25,7 @@ export default function AppRoute() {
             <Route path='/' element={<Home user={user} />} />
             <Route path='/perfil' element={<Profile />} />
             <Route path='/personal' element={<Personal />} />
-            <Route path='/fichar' element={<PunchIn />} />
+            <Route path='/fichero' element={<PunchIn />} />
           </Route>
         </Routes>
       </Router>
