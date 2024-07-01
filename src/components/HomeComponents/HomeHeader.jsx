@@ -9,7 +9,7 @@ export default function HomeHeader({ user }) {
 
   return (
     <article className='d-flex align-items-center p-4 home-header-container mb-4 bg-light-subtle border border-2 rounded'>
-      <img className='rounded-circle mx-4 shadow-p border-1' src='../../../public/assets/user.png' alt='User IMG' style={{ width: '80px' }} />
+      <img className='rounded-circle mx-4 shadow-p border-1' src='/assets/user.png' alt='User IMG' style={{ width: '80px' }} />
       <div className=' '>
         <h3>
           Hola, <b style={{ color: '#051c2e' }}>{user.name}</b>

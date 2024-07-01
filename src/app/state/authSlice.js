@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: {
     token: 'token010101010101',
     user: {
@@ -9,12 +9,10 @@ export const authSlice = createSlice({
       lastname: 'Poblet',
       file: '226',
       position: 'Desarrollador Web',
-      img: '../../../public/assets/user.png'
-    }
+      img: '/assets/user.png',
+    },
   },
-  reducers: {
-
-  },
+  reducers: {},
 });
 
 // export const { setActivePage } = authSlice.actions;
