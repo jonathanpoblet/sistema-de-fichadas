@@ -14,7 +14,7 @@ const Sidebar = () => {
             <CDBSidebarMenuItem icon='home'>Inicio</CDBSidebarMenuItem>
           </Link>
           <Link to='/fichar' style={{ width: '100' }}>
-            <CDBSidebarMenuItem icon='credit-card'>Fichar</CDBSidebarMenuItem>
+            <CDBSidebarMenuItem icon='credit-card'>Fichero</CDBSidebarMenuItem>
           </Link>
           <Link to='/personal' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='users'>Personal</CDBSidebarMenuItem>
