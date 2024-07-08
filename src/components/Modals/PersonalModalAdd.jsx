@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
 
-export default function PersonalModalAdd({ companies, show, handleClose }) {
+export function PersonalModalAdd({ companies, show, handleClose }) {
   const addPersonal = async () => {
     const nombre = document.getElementById('add-personal-name').value;
     const apellido = document.getElementById('add-personal-lastname').value;

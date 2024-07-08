@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2';
 
-export default function PersonalModalEdit({ companies, show, handleClose, editablePersonal }) {
+export function PersonalModalEdit({ companies, show, handleClose, editablePersonal }) {
   const editPersonal = async () => {
     const nombre = document.getElementById('edit-personal-name').value;
     const apellido = document.getElementById('edit-personal-lastname').value;
