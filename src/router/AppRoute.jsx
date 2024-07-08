@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Profile = lazy(() => import('../pages/Profile/Profile'));
-const Personal = lazy(() => import('../pages/Personal/Personal'));
+const Employes = lazy(() => import('../pages/Employes/Employes'));
 const PunchIn = lazy(() => import('../pages/PunchIn/PunchIn'));
 const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
 
@@ -24,7 +24,7 @@ export default function AppRoute() {
           <Route element={<Layout />}>
             <Route path='/' element={<Home user={user} />} />
             <Route path='/perfil' element={<Profile />} />
-            <Route path='/personal' element={<Personal />} />
+            <Route path='/empleados' element={<Employes />} />
             <Route path='/fichero' element={<PunchIn />} />
           </Route>
         </Routes>

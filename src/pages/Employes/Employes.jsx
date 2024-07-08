@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
 import { AiFillEdit } from 'react-icons/ai';
 import { PersonalModalAdd } from '../../components/Modals/PersonalModalAdd';
-import { PersonalModalEdit } from '../../components/Modals/PersonalModalEdit';
+import { EmployeModalEdit } from '../../components/Modals/EmployeModalEdit';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { urlBackend } from '../../services/urlBackend';
 
 import { getCompanies } from '../../services/getCompanies';
 import columns from './columns.json';
 
-import './Personal.css';
+import './employes.css';
 
 export default function Personal() {
-  const [personal, setPersonal] = useState([]);
+  const [employes, setEmployes] = useState([]);
   const [companies, setCompanies] = useState([]);
 
   const [showModalAdd, setShowModalAdd] = useState(false);
@@ -23,46 +23,47 @@ export default function Personal() {
   const handleCloseModalEdit = () => setShowModalEdit(false);
   const handleShowModalEdit = () => setShowModalEdit(true);
 
-  const [editablePersonal, setEditablePersonal] = useState({});
+  const [editableEmployes, setEditableEmployes] = useState({});
 
   useEffect(() => {
-    async function getPersonal() {
+    async function getEmployes() {
       const response = await fetch(`${urlBackend}/api/employes`);
       const data = await response.json();
-      console.log(data);
-      setPersonal(data);
+      setEmployes(data);
     }
 
-    getPersonal();
+    getEmployes();
     getCompanies(setCompanies);
   }, []);
 
-  function setEditModal(client) {
-    setEditablePersonal({
-      nombre: client.nombre,
-      apellido: client.apellido,
-      dni: client.dni,
-      email: client.email,
-      cel: client.cel,
-      empresa: client.empresa_origen,
+  function setEditModal(employe) {
+    setEditableEmployes({
+      name: employe.name,
+      lastname: employe.lastname,
+      dni: employe.dni,
+      email: employe.email,
+      position: employe.position,
+      sector: employe.sector,
+      id_company: employe.id_company,
+      img: employe.img,
     });
   }
 
   const data = () => {
-    const formattedData = personal.map(client => ({
+    const formattedData = employes.map(employe => ({
       edit: (
         <button
           type='button'
           className='btn-sm btn-primary'
           onClick={() => {
             handleShowModalEdit();
-            setEditModal(client);
+            setEditModal(employe);
           }}
         >
           <AiFillEdit />
         </button>
       ),
-      ...client,
+      ...employe,
     }));
 
     return {
@@ -73,16 +74,25 @@ export default function Personal() {
 
   if (companies)
     return (
-      <section className='personal fade-in'>
-        <PersonalModalAdd companies={companies} show={showModalAdd} handleClose={handleCloseModalAdd} />
-        <PersonalModalEdit companies={companies} show={showModalEdit} handleClose={handleCloseModalEdit} editablePersonal={editablePersonal} />
-        <PageHeader title='PERSONAL' />
+      <section className='employes fade-in'>
+        <PersonalModalAdd
+          companies={companies}
+          show={showModalAdd}
+          handleClose={handleCloseModalAdd}
+        />
+        <EmployeModalEdit
+          companies={companies}
+          show={showModalEdit}
+          handleClose={handleCloseModalEdit}
+          editableEmployes={editableEmployes}
+        />
+        <PageHeader title='EMPLEADOS' />
         <article className='d-flex align-items-center mb-4 rounded'>
           <button type='button' className='btn btn-success' onClick={() => handleShowModalAdd()}>
             Agregar Personal
           </button>
         </article>
-        {personal.length !== 0 ? (
+        {employes.length !== 0 ? (
           <CDBContainer className='p-0 bg-general w-100 m-0'>
             <CDBCard className='border-0 rounded'>
               <CDBCardBody className='p-4 w-100'>

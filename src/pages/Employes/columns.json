@@ -30,14 +30,20 @@
     "width": "100"
   },
   {
-    "label": "Celular",
-    "field": "cel",
+    "label": "Empresa",
+    "field": "company",
     "sort": "disabled",
-    "width": "150"
+    "width": "100"
   },
   {
-    "label": "Empresa",
-    "field": "company_name",
+    "label": "Sector",
+    "field": "sector",
+    "sort": "disabled",
+    "width": "100"
+  },
+  {
+    "label": "Posición",
+    "field": "position",
     "sort": "disabled",
     "width": "100"
   }
