@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
 import { AiFillEdit } from 'react-icons/ai';
-import { PersonalModalAdd } from '../../components/Modals/PersonalModalAdd';
 import { EmployeModalEdit } from '../../components/Modals/EmployeModalEdit';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { urlBackend } from '../../services/urlBackend';
@@ -10,6 +9,7 @@ import { getCompanies } from '../../services/getCompanies';
 import columns from './columns.json';
 
 import './employes.css';
+import { EmployeModalAdd } from '../../components/Modals/EmployeModalAdd';
 
 export default function Personal() {
   const [employes, setEmployes] = useState([]);
@@ -75,7 +75,7 @@ export default function Personal() {
   if (companies)
     return (
       <section className='employes fade-in'>
-        <PersonalModalAdd
+        <EmployeModalAdd
           companies={companies}
           show={showModalAdd}
           handleClose={handleCloseModalAdd}
@@ -89,7 +89,7 @@ export default function Personal() {
         <PageHeader title='EMPLEADOS' />
         <article className='d-flex align-items-center mb-4 rounded'>
           <button type='button' className='btn btn-success' onClick={() => handleShowModalAdd()}>
-            Agregar Personal
+            Agregar Empleado
           </button>
         </article>
         {employes.length !== 0 ? (
