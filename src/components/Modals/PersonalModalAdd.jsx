@@ -12,7 +12,8 @@ export function PersonalModalAdd({ companies, show, handleClose }) {
     const cel = document.getElementById('add-personal-cel').value;
     const empresa = document.getElementById('add-personal-domicile').value;
 
-    if (!nombre || !apellido || !dni || !email || !cel || !empresa) return Swal.fire('Faltan datos');
+    if (!nombre || !apellido || !dni || !email || !cel || !empresa)
+      return Swal.fire('Faltan datos');
 
     const form = {
       nombre,
@@ -62,9 +63,10 @@ export function PersonalModalAdd({ companies, show, handleClose }) {
               <Form.Select id='add-personal-company'>
                 <option value=''>--- Seleccione la empresa ---</option>
                 {companies.map(company => {
+                  console.log(company);
                   return (
-                    <option key={company.id_int_empresas} value={company.id_int_empresas}>
-                      {company.empresa}
+                    <option key={company.id_company} value={company.id_company}>
+                      {company.company}
                     </option>
                   );
                 })}
