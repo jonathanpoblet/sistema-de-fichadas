@@ -1,0 +1,32 @@
+.home-redirects-card {
+  color: white;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.home-redirects-card:hover {
+  opacity: 0.7;
+}
+
+.home-redirects-card .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+.home-redirects-card-button {
+  color: white;
+  text-decoration: none;
+}
+
+.home-redirects-card-button:hover {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.home-redirects-card-button:focus,
+.home-redirects-card-button:active {
+  box-shadow: none;
+}

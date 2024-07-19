@@ -12,8 +12,8 @@ const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
 const Spinner = lazy(() => import('../components/Spinner/Spinner'));
 
 export default function AppRoute() {
-  const user = useSelector(state => state.auth.user);
-  const token = useSelector(state => state.auth.token);
+  const user = useSelector(state => state.user.info);
+  const token = useSelector(state => state.user.token);
 
   return (
     <Suspense fallback={<Spinner />}>

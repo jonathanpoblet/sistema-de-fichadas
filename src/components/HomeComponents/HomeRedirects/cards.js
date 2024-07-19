@@ -1,0 +1,38 @@
+export const cards = [
+  {
+    bg: 'bg-success',
+    color: 'text-white',
+    title: 'Perfil',
+    subtitle: 'Datos personales',
+    icon: 'fa fa-user fa-3x',
+    href: '../perfil',
+    text: 'Ir a Perfil',
+  },
+  {
+    bg: 'bg-warning',
+    color: 'text-white',
+    title: 'Agenda',
+    subtitle: 'Listado de Personal',
+    icon: 'fa fa-book fa-3x',
+    href: '../agenda',
+    text: 'Ir a Agenda',
+  },
+  {
+    bg: 'bg-danger',
+    color: 'text-white',
+    title: 'Gmail',
+    subtitle: 'Ver Correos',
+    icon: 'fa fa-envelope fa-3x',
+    href: '../gmail',
+    text: 'Ir a Gmail',
+  },
+  {
+    bg: 'bg-primary',
+    color: 'text-white',
+    title: 'TeamViewer',
+    subtitle: 'Acceso Remoto',
+    icon: 'fa fa-tv fa-3x',
+    href: '../teamviewer',
+    text: 'Ir a TeamViewer',
+  },
+];

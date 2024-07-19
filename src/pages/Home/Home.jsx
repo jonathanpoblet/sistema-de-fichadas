@@ -1,20 +1,14 @@
-import HomeHeader from '../../components/HomeComponents/HomeHeader';
-import HomeStadistics from '../../components/HomeComponents/HomeStadistics';
+import HomeHeader from '../../components/HomeComponents/HomeHeader/HomeHeader';
+import HomeRedirects from '../../components/HomeComponents/HomeRedirects/HomeRedirects';
 
 import './home.css';
 
 export default function Home({ user }) {
-  const stadistics = {
-    incomes: '820.100',
-    expenses: '340.220',
-    clients: '520',
-    staff: '13',
-  };
-
   return (
     <section className='home fade-in'>
       <HomeHeader user={user} />
-      <HomeStadistics stadistics={stadistics} />
+      <HomeRedirects />
+      <img className='home-banner my-4' src='../assets/Home/banner.jpg' />
     </section>
   );
 }
