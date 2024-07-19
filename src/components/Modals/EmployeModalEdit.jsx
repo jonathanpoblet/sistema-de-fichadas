@@ -5,30 +5,28 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Swal from 'sweetalert2';
 
-export function EmployeModalEdit({ companies, show, handleClose, editableEmployes }) {
+export function EmployeModalEdit({ employe, companies, show, handleClose }) {
   const editEmploye = async () => {
     const name = document.getElementById('edit-employe-name').value;
     const lastname = document.getElementById('edit-employe-lastname').value;
-    const age = document.getElementById('edit-employe-age').value;
     const dni = document.getElementById('edit-employe-dni').value;
     const email = document.getElementById('edit-employe-email').value;
     const sector = document.getElementById('edit-employe-sector').value;
     const position = document.getElementById('edit-employe-position').value;
     const id_company = document.getElementById('edit-employe-company').value;
 
-    if (!name || !lastname || !dni || !email || !sector || !position || !id_company)
-      return Swal.fire('Faltan datos');
-
     const form = {
+      id_employe: employe.id_employe,
       name,
       lastname,
-      age,
       dni,
       email,
       sector,
       position,
       id_company,
     };
+
+    console.log(form);
   };
 
   return (
@@ -43,11 +41,7 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
               <Col xs={12} sm={6}>
                 <Form.Group className='mb-3'>
                   <Form.Label>Nombre</Form.Label>
-                  <Form.Control
-                    type='text'
-                    id='edit-employe-name'
-                    defaultValue={editableEmployes.name}
-                  />
+                  <Form.Control type='text' id='edit-employe-name' defaultValue={employe.name} />
                 </Form.Group>
               </Col>
               <Col xs={12} sm={6}>
@@ -56,7 +50,7 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
                   <Form.Control
                     type='text'
                     id='edit-employe-lastname'
-                    defaultValue={editableEmployes.lastname}
+                    defaultValue={employe.lastname}
                   />
                 </Form.Group>
               </Col>
@@ -65,21 +59,13 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
               <Col xs={12} sm={6}>
                 <Form.Group className='mb-3'>
                   <Form.Label>DNI</Form.Label>
-                  <Form.Control
-                    type='number'
-                    id='edit-employe-dni'
-                    defaultValue={editableEmployes.dni}
-                  />
+                  <Form.Control type='number' id='edit-employe-dni' defaultValue={employe.dni} />
                 </Form.Group>
               </Col>
               <Col xs={12} sm={6}>
                 <Form.Group className='mb-3'>
                   <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type='email'
-                    id='edit-employe-email'
-                    defaultValue={editableEmployes.email}
-                  />
+                  <Form.Control type='email' id='edit-employe-email' defaultValue={employe.email} />
                 </Form.Group>
               </Col>
             </Row>
@@ -90,7 +76,7 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
                   <Form.Control
                     type='text'
                     id='edit-employe-sector'
-                    defaultValue={editableEmployes.sector}
+                    defaultValue={employe.sector}
                   />
                 </Form.Group>
               </Col>
@@ -100,7 +86,7 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
                   <Form.Control
                     type='text'
                     id='edit-employe-position'
-                    defaultValue={editableEmployes.position}
+                    defaultValue={employe.position}
                   />
                 </Form.Group>
               </Col>
@@ -109,7 +95,7 @@ export function EmployeModalEdit({ companies, show, handleClose, editableEmploye
               <Col xs={12} sm={6}>
                 <Form.Group className='mb-3'>
                   <Form.Label>Empresa</Form.Label>
-                  <Form.Select id='edit-employe-company' defaultValue={editableEmployes.id_company}>
+                  <Form.Select id='edit-employe-company' defaultValue={employe.id_company}>
                     <option value=''>--- Seleccione la empresa ---</option>
                     {companies.map(company => (
                       <option key={company.id_company} value={company.id_company}>

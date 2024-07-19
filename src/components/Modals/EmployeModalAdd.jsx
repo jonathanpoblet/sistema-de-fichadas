@@ -63,7 +63,6 @@ export function EmployeModalAdd({ companies, show, handleClose }) {
               <Form.Select id='add-employe-company'>
                 <option value=''>--- Seleccione la empresa ---</option>
                 {companies.map(company => {
-                  console.log(company);
                   return (
                     <option key={company.id_company} value={company.id_company}>
                       {company.company}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CDBCard, CDBCardBody, CDBDataTable, CDBContainer } from 'cdbreact';
 import { AiFillEdit } from 'react-icons/ai';
 import { EmployeModalEdit } from '../../components/Modals/EmployeModalEdit';
+import { EmployeModalAdd } from '../../components/Modals/EmployeModalAdd';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { urlBackend } from '../../services/urlBackend';
 
@@ -9,7 +10,6 @@ import { getCompanies } from '../../services/getCompanies';
 import columns from './columns.json';
 
 import './employes.css';
-import { EmployeModalAdd } from '../../components/Modals/EmployeModalAdd';
 
 export default function Personal() {
   const [employes, setEmployes] = useState([]);
@@ -23,7 +23,7 @@ export default function Personal() {
   const handleCloseModalEdit = () => setShowModalEdit(false);
   const handleShowModalEdit = () => setShowModalEdit(true);
 
-  const [editableEmployes, setEditableEmployes] = useState({});
+  const [employe, setEmploye] = useState({});
 
   useEffect(() => {
     async function getEmployes() {
@@ -36,19 +36,6 @@ export default function Personal() {
     getCompanies(setCompanies);
   }, []);
 
-  function setEditModal(employe) {
-    setEditableEmployes({
-      name: employe.name,
-      lastname: employe.lastname,
-      dni: employe.dni,
-      email: employe.email,
-      position: employe.position,
-      sector: employe.sector,
-      id_company: employe.id_company,
-      img: employe.img,
-    });
-  }
-
   const data = () => {
     const formattedData = employes.map(employe => ({
       edit: (
@@ -57,7 +44,7 @@ export default function Personal() {
           className='btn-sm btn-primary'
           onClick={() => {
             handleShowModalEdit();
-            setEditModal(employe);
+            setEmploye(employe);
           }}
         >
           <AiFillEdit />
@@ -81,10 +68,10 @@ export default function Personal() {
           handleClose={handleCloseModalAdd}
         />
         <EmployeModalEdit
+          employe={employe}
           companies={companies}
           show={showModalEdit}
           handleClose={handleCloseModalEdit}
-          editableEmployes={editableEmployes}
         />
         <PageHeader title='EMPLEADOS' />
         <article className='d-flex align-items-center mb-4 rounded'>
