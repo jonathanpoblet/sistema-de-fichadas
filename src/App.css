@@ -26,6 +26,8 @@
 
 td {
   align-self: center !important;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 .dataTables_length {

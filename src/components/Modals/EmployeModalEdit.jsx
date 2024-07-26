@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Swal from 'sweetalert2';
+import { urlBackend } from '../../services/urlBackend';
 
 export function EmployeModalEdit({ employe, companies, show, handleClose }) {
   const editEmploye = async () => {
@@ -15,18 +16,21 @@ export function EmployeModalEdit({ employe, companies, show, handleClose }) {
     const position = document.getElementById('edit-employe-position').value;
     const id_company = document.getElementById('edit-employe-company').value;
 
-    const form = {
-      id_employe: employe.id_employe,
-      name,
-      lastname,
-      dni,
-      email,
-      sector,
-      position,
-      id_company,
-    };
+    const response = await fetch(`${urlBackend}/api/employes/${employe.id_employe}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, lastname, dni, email, sector, position, id_company }),
+    });
 
-    console.log(form);
+    if (response.status == 200) Swal.fire('Empleado Actualizado');
+    else if (response.status == 400) Swal.fire('Petición con datos erroneos');
+    else if (response.status == 404) Swal.fire('Empleado no encontrado');
+
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   };
 
   return (
