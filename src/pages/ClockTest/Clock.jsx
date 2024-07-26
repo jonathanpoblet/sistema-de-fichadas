@@ -3,13 +3,13 @@ import { PageHeader } from '../../components/PageHeader/PageHeader';
 
 import Swal from 'sweetalert2';
 
-import './punchIn.css';
+import './clock.css';
 
 const REFERENCE_LAT = -34.6246251543433;
 const REFERENCE_LNG = -58.45243991674626;
 
-export default function PunchIn() {
-  function postPunchIn() {
+export default function Clock() {
+  function postclock() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
@@ -70,9 +70,9 @@ export default function PunchIn() {
   }
 
   return (
-    <section className='punchIn fade-in'>
+    <section className='clock fade-in'>
       <PageHeader title='FICHERO' />
-      <button onClick={postPunchIn} className='btn btn-success'>
+      <button onClick={postclock} className='btn btn-success'>
         Enviar Fichada
       </button>
     </section>

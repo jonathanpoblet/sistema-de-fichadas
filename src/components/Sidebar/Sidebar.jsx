@@ -26,7 +26,7 @@ const Sidebar = () => {
           <Link to='/' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='home'>Inicio</CDBSidebarMenuItem>
           </Link>
-          <Link to='/fichero' style={{ width: '100' }}>
+          <Link to='/fichadas' style={{ width: '100' }}>
             <CDBSidebarMenuItem icon='credit-card'>Fichero</CDBSidebarMenuItem>
           </Link>
           <Link to='/empleados' style={{ width: '100' }}>

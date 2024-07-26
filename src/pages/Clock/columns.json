@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Fecha",
+    "field": "date",
+    "width": "270"
+  },
+  {
+    "label": "Empleado",
+    "field": "employe",
+    "width": "270"
+  },
+  {
+    "label": "Empresa",
+    "field": "company",
+    "width": "270"
+  },
+  {
+    "label": "Sucursal",
+    "field": "branch",
+    "width": "270"
+  }
+]
