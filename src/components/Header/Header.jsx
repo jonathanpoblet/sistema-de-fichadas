@@ -12,8 +12,7 @@ export default function Header() {
       <nav className='navbar navbar-expand-lg navbar-light'>
         <div className='container-fluid'>
           <Link to='../'>
-            <img className='nav-logo' src='../assets/Companies/grupo-taraborelli.png' alt='logo' />
-            {/* <img className='nav-logo' src='../../../public/assets/logo.png' alt='logo' /> */}
+            <img className='nav-logo' src='../assets/Companies/grupo-taraborelli2.png' alt='logo' />
           </Link>
           <div className='btn-group dropstart'>
             <img
